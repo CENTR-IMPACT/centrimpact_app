@@ -1,0 +1,1064 @@
+/* Global */
+body {
+    background-color: #edeae2;
+    color: #2a2a2a;
+    font-size: 1rem;
+}
+
+.main_content {
+    padding: 1.5em 2em 1.5em 2em;
+}
+
+.custom-fieldset {
+    padding: 0.25em 1.5em;
+    margin: 1em 0;
+    background: transparent;
+    border: 1px solid var(--bs-border-color); /* Use a general border-color */
+    border-radius: 10px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.mini-fieldset {
+    padding: 0.01em !important;
+    lineheight: 1.2em !important;
+    margin: 0 !important;
+    background: transparent;
+    border: 1px solid var(--bs-border-color); /* Use a general border-color */
+    border-radius: 6px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.mini-legend {
+    font-weight: 600;
+    font-size: 10px;
+    padding: 0 0.05em;
+    line-height: 1.2em !important;
+    color: var(--sidebar-bg);
+    text-transform: uppercase;
+    font-family: var(--bs-font-monospace);
+    margin-top: -0.4em;
+    background: var(--bs-body-bg);
+    display: inline-block;
+    width: fit-content;
+}
+
+.custom-fieldset:hover {
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.custom-legend {
+    font-weight: 700;
+    font-size: 16px;
+    padding: 0 0.25em;
+    color: var(--sidebar-bg);
+    text-transform: uppercase;
+    font-family: var(--bs-font-monospace);
+    letter-spacing: 0.5px;
+    margin-top: -1em;
+    background: #eee7d9;
+    display: inline-block;
+    width: fit-content;
+}
+
+/* Subtle type distinctions that work with your color scheme */
+.score-domain {
+    border-left: 4px solid var(--score-color);
+    border-bottom: 1px solid #c8bfa6; /* Your border color */
+}
+
+.score-alignment {
+    border-top: 4px solid var(--score-color);
+    border-bottom: 1px solid #c8bfa6;
+}
+
+.score-cascade {
+    border-right: 4px solid var(--score-color);
+    border-bottom: 1px solid #c8bfa6;
+}
+
+/* Overall score styling */
+.overall-score {
+    margin-top: 20px;
+    border: 2px solid #3b6b35; /* Your primary green */
+    background-color: #f0f5ef;
+    box-shadow: 0 2px 4px rgba(92, 90, 88, 0.1); /* Subtle shadow using your sidebar color */
+}
+
+/* Ensure good contrast on your card backgrounds */
+.value-box {
+    background-color: #fdf5e6; /* Your input-bg for better contrast */
+    border: 1px solid #c8bfa6; /* Your border color */
+    font-family: var(--bs-code-font);
+}
+
+/* Custom styling for download buttons */
+.btn.btn-custom.shiny-download-link {
+    background-color: #8A7A8F;
+    color: #ffffff;
+    border: none;
+    padding: 0.44rem 1.1rem;
+    font-size: 0.7rem;
+    letter-spacing: 0.4px;
+    border-radius: 6px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.btn.btn-custom.shiny-download-link:hover {
+    background-color: #756683;
+    text-decoration: none;
+}
+
+.btn.btn-custom.shiny-download-link:active {
+    background-color: #605470;
+    box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+}
+
+/* Base alert styling */
+.alert {
+    position: relative;
+    padding: 0.75rem 1.25rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: 0.375rem;
+}
+
+/* Success alert (sage green) */
+.alert-success {
+    color: #2a3a2a;
+    background-color: #e8f0e8;
+    border-color: #b8c8b8;
+}
+
+/* Info alert (soft blue-grey) */
+.alert-info {
+    color: #2a353a;
+    background-color: #e8edef;
+    border-color: #b8c5ca;
+}
+
+/* Warning alert (warm amber - keeping existing as it fits well) */
+.alert-warning {
+    color: #664d03;
+    background-color: #fdf4e6;
+    border-color: #e6b800;
+}
+
+/* Danger alert (muted terracotta) */
+.alert-danger {
+    color: #4a2a2a;
+    background-color: #f0e8e8;
+    border-color: #cc9999;
+}
+
+/* Dismissible alerts */
+.alert-dismissible {
+    padding-right: 3rem;
+}
+
+.alert-dismissible .btn-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
+    padding: 0.9375rem 1.25rem;
+}
+
+/* Fade animations */
+.fade {
+    transition: opacity 0.05s linear;
+}
+
+.fade:not(.show) {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.fade.show {
+    opacity: 1;
+}
+
+
+
+/* Accordion
+
+.accordion-button,
+.accordion-header {
+    background-color: #d4c8a8 !important; /* !important may be needed to override Bootstrap defaults */
+    color: var(--bs-body-color);
+    border: none;
+    transition: background 0.4s;
+}
+
+.accordion-button:hover,
+.accordion-button:focus,
+.accordion-header:hover,
+.accordion-header:focus {
+    background-color: #c8bfa6 !important; /* Slightly darker on hover */
+    color: var(--bs-body-color);
+}
+
+.accordion-button:not(.collapsed),
+.accordion-header:not(.collapsed) {
+    background-color: #b8a989 !important; /* Your existing accordion-active-bg */
+    color: var(--bs-body-color);
+    font-weight: bold;
+    font-size: 1.6em;
+}
+
+.accordion-body {
+    background-color: #eee7d9; /* Use main body-bg for panel to create distinction */
+    transition: max-height 0.3s ease;
+    padding: 1.5em 2.5em 1.5em 2.5em;
+}
+
+.data-placeholder {
+    background-color: #fdf4e6; /* Light tint of your warning color */
+    border: 1px solid #e6b800;
+    border-left: 4px solid #e6b800; /* Accent border */
+    border-radius: 8px;
+    padding: 2rem;
+    margin: 1rem 0;
+    text-align: center;
+    color: #2a2a2a;
+    font-style: italic;
+    font-size: 0.95rem;
+}
+
+.warning-card {
+    background-color: #fdf4e6; /* Very light amber */
+    border: 1px solid #e6b800; /* Golden amber border */
+    border-left: 4px solid #e6b800;
+    border-radius: 8px;
+    padding: 1rem;
+    margin: 1rem 0;
+    color: #2a2a2a;
+}
+
+.warning-card .warning-icon,
+.data-placeholder .warning-icon {
+    color: #e6b800;
+    font-size: 2em;
+}
+
+/* Container for the progress bar and its label */
+.progress-container {
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+/* Label for the progress bar */
+.progress-label {
+    font-family: var(--bs-font-monospace);
+    text-transform: uppercase;
+    color: #8a7a8f;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+/* The background of the progress bar (the "track") */
+.progress {
+    background-color: #e2d8c3; /* Your 'card-bg' color for a soft track */
+    border-radius: 0.375rem; /* Matches your standard border-radius */
+    height: 1.5rem; /* A slightly taller bar for better visibility */
+    border: 1px solid #c8bfa6; /* Your 'border-color' */
+}
+
+/* The moving bar itself */
+.progress-bar {
+    background-color: var(--bs-success);
+    font-family: var(--bs-font-monospace);
+    text-transform: uppercase;
+    color: #F5F1E8;
+    font-weight: 600;
+}
+
+.progress-number {
+    display: none !important;
+}
+
+.progress-text {
+    font-family: var(--bs-font-monospace);
+    text-transform: uppercase;
+    color: #8a7a8f;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.progress-bar.bs-success {
+    background-color: var(--bs-success) !important;
+}
+.progress-bar.bs-danger {
+    background-color: var(--bs-danger) !important;
+}
+
+/* Add stripes for visual interest */
+.progress-bar-striped {
+    background-image: linear-gradient(
+        45deg,
+        rgba(255, 255, 255, 0.2) 25%,
+        transparent 25%,
+        transparent 50%,
+        rgba(255, 255, 255, 0.2) 50%,
+        rgba(255, 255, 255, 0.2) 75%,
+        transparent 75%,
+        transparent
+    );
+}
+
+/* Base styling for the alert card */
+/* In custom.css */
+
+/* Base styling for the alert card */
+
+/* Icon styling */
+.alert-icon {
+    font-size: 1.5rem;
+    margin-right: 0.75rem;
+    vertical-align: middle; /* Better alignment with text */
+}
+
+/* Message text styling */
+.alert-message-text {
+    font-family: var(--bs-code-font);
+    font-weight: 600;
+    font-size: 1rem;
+    vertical-align: middle;
+}
+
+.data-placeholder {
+    background-color: #fdf4e6; /* Light tint of your warning color */
+    border: 1px solid #e6b800;
+    border-left: 4px solid #e6b800; /* Accent border */
+    border-radius: 8px;
+    padding: 2rem;
+    margin: 1rem 0;
+    text-align: center;
+    color: #2a2a2a;
+    font-style: italic;
+    font-size: 0.95rem;
+}
+
+.warning-card {
+    background-color: #fdf4e6; /* Very light amber */
+    border: 1px solid #e6b800; /* Golden amber border */
+    border-left: 4px solid #e6b800;
+    border-radius: 8px;
+    padding: 1rem;
+    margin: 1rem 0;
+    color: #2a2a2a;
+}
+
+.warning-card .warning-icon,
+.data-placeholder .warning-icon {
+    color: #e6b800;
+    font-size: 2em;
+}
+
+.status-fade {
+    opacity: 1;
+}
+.status-fade.out {
+    opacity: 0;
+}
+
+.control-label {
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--bs-secondary);
+    font-size: 0.9em;
+}
+
+.shiny-file-input-progress {
+    color: #3b6b3588;
+}
+
+/* Cards and Content */
+.card,
+.main-content,
+.bslib-card {
+    background-color: var(--bs-card-bg); /* Use card-bg */
+    border: 1px solid var(--bs-border-color); /* Use a general border-color */
+    border-radius: 10px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+    padding: 1rem;
+}
+
+/* Sidebar */
+.sidebar {
+    background-color: #5c5a58; /* Use sidebar-bg (darker) */
+    color: #f5f1e8; /* Use sidebar-fg (creamy white) */
+    border-right: 2px solid #c8bfa6; /* Use border-color for a subtle line */
+}
+
+/* Navbar */
+.navbar {
+    background-color: #5c5a58;
+    color: #f5f1e8; /* Use navbar-fg */
+}
+
+.navbar .navbar-brand,
+.navbar-nav > li > a {
+    color: #f5f1e8; /* Use navbar-fg for links in navbar */
+    font-weight: 600;
+}
+
+.outlined-card {
+    border: 2px solid #dee2e6;
+    border-radius: 8px;
+    background: transparent;
+    position: relative;
+    margin-top: 10px;
+}
+
+.outlined-card .card-header {
+    background: transparent;
+    border: none;
+    position: absolute;
+    top: -12px;
+    left: 20px;
+    padding: 0 10px;
+    background: white;
+    font-weight: 600;
+}
+
+.outlined-card .card-body {
+    padding-top: 20px;
+}
+
+/* Buttons */
+.btn {
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05) !important;
+    font-family: var(--bs-font-monospace);
+    text-transform: uppercase;
+}
+
+.btn-primary {
+    background-color: #657e93;
+    border-color: var(--bs-primary);
+    color: var(--bs-body-bg); /* Use primary color for text */
+}
+
+.btn-primary:hover {
+    background-color: var(--bs-primary); /* Darker shade of primary on hover */
+    border-color: var(--bs-primary);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+.btn-secondary {
+    background-color: var(--bs-secondary);
+    border-color: var(--bs-secondary);
+    color: var(--bs-body-bg); /* Light text for contrast on secondary */
+}
+.btn-secondary:hover {
+    background-color: #8a7a8f; /* Darker shade of secondary on hover */
+    border-color: #8a7a8f;
+}
+
+.btn-primary:active,
+.btn-secondary:active {
+    box-shadow: 0 0 0 0.2rem rgba(138, 122, 143, 0.25); /* Subtle focus shadow */
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4 {
+    font-family: var(--bs-heading-font); /* Use heading-font variable */
+    color: var(--bs-body-color); /* Use body-color for headings */
+    font-weight: 700;
+}
+
+code,
+pre {
+    background-color: var(--bs-card-bg); /* Harmonize with card background */
+    color: var(--bs-body-color); /* Ensure readability */
+    border-radius: 4px;
+}
+
+.progress-test (
+  color: #ffffff;
+  font-family: var(--bs-code-font-family);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+)
+
+/* Forms */
+.form-control, .selectize-input, .form-select {
+    background-color: var(--bs-input-bg); /* Use input-bg (light cream) */
+    border: 1px solid var(--bs-border-color); /* Consistent border */
+    border-radius: 6px;
+    color: var(--bs-body-color); /* Use body-color for input text */
+}
+
+/* Optional: Mild interactive shadow on hover */
+.card:hover {
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.status-line {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    font-size: 0.95rem;
+    color: var(--bs-body-color); /* Consistent with body text */
+    background-color: var(--bs-body-bg); /* Consistent with body bg */
+    box-shadow: inset 0 -1px 2px rgba(0, 0, 0, 0.05);
+    padding: 0.5em 0.75em;
+    border-radius: 6px;
+    margin-bottom: 1.5em;
+    text-transform: uppercase;
+    font-family: var(--bs-code-font); /* Use body font for consistency */
+}
+
+.status-line .ph {
+    font-size: 1.2rem;
+    vertical-align: middle;
+}
+
+/* Sidebar "Status", "Scores", "Tools" sections (if they are .d-flex.infocard) */
+.d-flex.infocard {
+    background-color: var(
+        --bs-sidebar-bg
+    ); /* Consistent with sidebar background */
+    color: var(--bs-sidebar-fg); /* Consistent with sidebar foreground */
+    padding: 0.5em 0.75em;
+    margin: 0.5em auto;
+    width: 85%;
+    border-radius: 6px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+/* General action button styling */
+.action-button {
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Specific styling for the 'Dark Mode', 'Overview Mode', 'Data Mode', 'Save Snapshot' buttons in sidebar */
+.sidebar .action-button {
+    background-color: transparent;
+    color: var(--bs-navbar-fg); /* Default: light text on dark sidebar */
+    border: 1px solid var(--bs-secondary); /* A slightly darker shade of sidebar-bg for definition */
+    padding: 0.5em 1em;
+    margin: 0.5em 0;
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+}
+
+.sidebar .action-button:hover {
+    background-color: var(--bs-secondary); /* Hover: terracotta accent */
+    color: var(--bs-navbar-fg); /* Hover: light text */
+    border-color: var(--bs-secondary);
+}
+
+/* Active state for these sidebar buttons */
+.sidebar .action-button.active {
+    background-color: var(--bs-primary); /* Active: forest green accent */
+    color: var(--bs-navbar-fg); /* Active: light text */
+    border-color: var(--bs-primary);
+}
+
+/* Icons within sidebar buttons */
+.sidebar .action-button .ph {
+    color: var(--bs-sidebar-fg); /* Default icon color */
+}
+
+.sidebar .action-button:hover .ph,
+.sidebar .action-button.active .ph {
+    color: var(--bs-navbar-fg); /* Light icon color on hover/active */
+}
+
+/* File input buttons (e.g., "Browse") */
+.file-input .btn {
+    background-color: var(
+        --bs-secondary
+    ); /* Uses terracotta for "Browse" button */
+    color: var(--bs-navbar-fg); /* Light text on terracotta */
+    border-color: var(--bs-secondary);
+}
+.file-input .btn:hover {
+    background-color: #b25f45; /* Darker terracotta on hover */
+    border-color: #b25f45;
+}
+
+.load-snapshot-class input[type='file']::file-selector-button {
+  /* Your styles here */
+  border-radius: 12px;
+}
+
+#load_snapshot_button input[type='file']::file-selector-button {
+  border-radius: 12px !important;
+}
+
+/* Hide the filename box for the fileInput with id 'load_snapshot' */
+#load_snapshot_button .form-control {
+        display: none !important;
+      }
+
+/* Enhanced Sidebar Styling */
+.enhanced-sidebar {
+    background: linear-gradient(145deg, #5C5A58 0%, #4A4845 100%);
+    color: #F5F1E8;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 2px 0 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Section Headers */
+.section-header {
+    font-size: 11px;
+    font-weight: 700;
+    color: #C8BFA6;
+    font-family: var(--bs-font-monospace);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.25em;
+}
+
+/* Snapshot Buttons */
+.snapshot-button {
+    width: 100%;
+}
+
+.snapshot-button .btn,
+.snapshot-button .btn-file {
+    background-color: transparent;
+    color: var(--sidebar-fg, #F5F1E8);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 5px;
+    padding: 8px 12px;
+    font-size: 0.9rem;
+    font-family: var(--bs-font-sans-serif);
+    width: 100%;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s ease-in-out;
+    margin: 0;
+    box-shadow: none;
+}
+
+.snapshot-button .btn:hover,
+.snapshot-button .btn-file:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--sidebar-fg, #F5F1E8);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Remove default download button icon */
+#save_snapshot i:last-child {
+    display: none !important;
+}
+
+/* Hide default file input */
+.snapshot-button input[type="file"] {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+/* Ensure button text stays on one line */
+.snapshot-button .btn,
+.snapshot-button .btn-file {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Project Section */
+.project-section {
+    padding: 2px 10px 12px 10px; /* Less top padding, keep bottom for separation */
+    margin-top: 0; /* Remove any default margin */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.project-title {
+    font-size: 16px;
+    color: #F5F1E8;
+    margin-bottom: 8px;
+    text-align: left;
+    font-family: var(--bs-font-sans-serif);
+}
+
+.project-date {
+    font-size: 13px;
+    color: #C8BFA6;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* Scores Section */
+.scores-section {
+    padding: 2px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.scores-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+    margin-top: 16px;
+}
+
+.score-item {
+    text-align: center;
+    padding: 4px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    transition: all 0.2s ease;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    margin-bottom: 6px;
+}
+
+.score-item:hover {
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateY(-2px);
+}
+
+.score-icon {
+    font-size: 24px !important;
+}
+
+.score-icon.alignment {
+    color: #A08E6F;
+}
+
+.score-icon.dynamics {
+    color: #88707E;
+}
+
+.score-icon.cascade {
+    color: #B49291;
+}
+
+/* Sidebar scores - default state */
+.sidebar .score-value {
+    font-size: 28px; /* Slightly smaller font size */
+    font-weight: 500;
+    color: #F5F1E844; /* Semi-transparent by default */
+}
+
+/* Sidebar scores - active state */
+.sidebar .score-value.has-score {
+    color: #F5F1E8; /* Solid when score is present */
+}
+
+/* Sidebar metric icons */
+.sidebar .metric-icon {
+    font-size: 1rem; /* Smaller icon size for sidebar */
+    color: #F5F1E844; /* Semi-transparent by default */
+}
+
+.sidebar .metric-icon.has-score {
+    color: #F5F1E8; /* Solid when score is present */
+}
+
+/* Analysis value box metrics - inherit color from parent to match value */
+.value-box .metric-icon,
+.value-box .metric-descriptor {
+    color: inherit; /* Inherit color from parent value box */
+}
+
+/* Default state for value box scores */
+.value-box .score-value {
+    font-size: 32px;
+    font-weight: 500;
+    color: #F5F1E844; /* Semi-transparent by default */
+}
+
+/* Active state for value box scores */
+.value-box .score-value.has-score {
+    color: #F5F1E8; /* Solid when score is present */
+}
+
+.score-label {
+    font-size: 14px;
+    color: #C8BFA6;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: left;
+    font-family: var(--bs-font-sans-serif);
+    letter-spacing: 0.5px;
+}
+
+/* Tools Section */
+.tools-section {
+    flex: 1;
+    padding: 2px;
+}
+
+.tool-button {
+    width: 100%;
+    margin-bottom: 12px;
+    padding: 14px 16px;
+    border: none;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-align: left;
+    font-family: var(--bs-font-monospace);
+    text-transform: uppercase;
+}
+
+.upload-button {
+    background: rgba(92, 100, 112, 0.15);
+    color: #5C6470;
+    border: 1px solid rgba(92, 100, 112, 0.3);
+}
+
+.upload-button:hover {
+    background: rgba(92, 100, 112, 0.25);
+    transform: translateY(-1px);
+    color: #5C6470;
+}
+
+.save-button {
+    background: linear-gradient(135deg, #5C6470 0%, #4A5159 100%);
+    color: #F5F1E8;
+    border: none;
+}
+
+.save-button:hover {
+    background: linear-gradient(135deg, #4A5159 0%, #3D424A 100%);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(92, 100, 112, 0.3);
+    color: #F5F1E8;
+}
+
+.load-button {
+    background: transparent;
+    color: #C8BFA6;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.load-button:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: #F5F1E8;
+}
+
+.button-icon {
+    width: 16px;
+    height: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    flex-shrink: 0;
+}
+
+/* File input styling for load snapshot */
+#load_snapshot_button .btn {
+    background: transparent;
+    color: #C8BFA6;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    width: 100%;
+    margin-bottom: 12px;
+    padding: 14px 16px;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-align: left;
+    font-family: var(--bs-font-monospace);
+    text-transform: uppercase;
+}
+
+#load_snapshot_button .btn:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: #F5F1E8;
+    transform: translateY(-1px);
+}
+
+.complete-badge {
+    background: rgba(93, 115, 89, 0.15);
+    color: #5D7359;
+    border: 1px solid rgba(93, 115, 89, 0.3);
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 8px;
+    text-align: center;
+}
+
+/* Placeholders/disabled text in form inputs */
+.form-control::placeholder {
+    color: #8c8a82; /* Muted grey for placeholders */
+}
+
+.form-control:disabled {
+    background-color: #efece5; /* Slightly darker than input-bg */
+    color: #8c8a82;
+}
+
+/* Workflow icons (top of sidebar) */
+.sidebar .d-flex.align-items-center.justify-content-evenly.gap-2 .sidebar-icon {
+    font-size: 1.5em;
+    transition: color 0.3s ease;
+    color: var(
+        --bs-sidebar-fg
+    ); /* Ensure workflow icons are light on dark sidebar */
+}
+
+/* Overlay card and background for visualization module */
+.overlay-card {
+    position: fixed;
+    top: 5vh;
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 9999;
+    width: 80vw;
+    max-width: 1200px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+    background: white;
+    padding: 1.5em;
+    border-radius: 1em;
+}
+.overlay-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 9998;
+}
+
+.pill-left {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    background-color: #b8a989;
+    border-width: 1px 0 1px 1px;
+    border-style: solid;
+    border-color: #b8a989;
+    border-radius: 5px 0 0 5px;
+    padding: 0 0 0 0.5em;
+    text-transform: lowercase;
+    font-style: italic;
+    /*font-family: var(--bs-font-monospace);
+  font-weight: bold;*/
+    font-size: 0.8em;
+    height: 100%;
+    margin-bottom: 0.5em;
+}
+
+.pill-right {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    border-width: 1px 1px 1px 0;
+    background-color: #fdf5e6;
+    border-style: solid;
+    border-color: #b8a989;
+    margin-bottom: 0.5em;
+    border-radius: 0 5px 5px 0;
+    padding: 0 0.5em 0 0;
+    font-size: 0.9em;
+    font-weight: bold;
+    font-family: var(--bs-font-monospace);
+    height: 100%;
+}
+
+.plot-max-height {
+    max-height: 70px;
+    overflow: hidden;
+}
+
+/* Data input mode selector - prominent since it affects workflow */
+.data-mode-selector {
+  display: flex;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  padding: 2px;
+  margin-bottom: 20px; /* More separation from other buttons */
+}
+
+.mode-option {
+  flex: 1;
+  padding: 8px 10px;
+  text-align: center;
+  border-radius: 4px;
+  font-size: 10px;
+  font-family: var(--bs-font-sans-serif);
+  text-transform: uppercase;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.mode-option.inactive {
+  background: transparent;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.mode-option.active {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* Snapshot management - standard action buttons */
+.snapshot-button {
+  display: flex;
+  align-items: center;
+  padding: 2px 4px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 5px;
+  margin-bottom: 8px;
+}
+
+/* Special styling for file input within snapshot-button container */
+.snapshot-button .shiny-input-container {
+  width: 100%;
+  margin: 0;
+}
+
+.snapshot-button .btn-file {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  color: rgba(255, 255, 255, 0.9) !important;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.snapshot-button .btn-file:hover {
+  background: rgba(255, 255, 255, 0.1) !important;
+  color: white !important;
+}
+
+.snapshot-button .form-control {
+  display: none;
+}

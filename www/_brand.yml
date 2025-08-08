@@ -1,0 +1,52 @@
+default:
+  colors:
+    # Direct assignment for foreground and background
+    foreground: "#4A4A4A"  # Dark gray text
+    background: "#F2ECD7"  # Light beige background
+
+  color_palette:
+    color1: "#4E342E"  # Brown
+    color2: "#3B6B35"  # Forest green
+    color3: "#3F5E78"  # Denim blue
+    color4: "#990000"  # Deep red
+    color5: "#A64B42"  # Rust
+    color6: "#E18B4E"  # Burnt orange
+    color7: "#636b2f"  # Olive green
+    color8: "#1E325C"  # Indigo
+    color9: "#E8D8C3"  # Soft beige
+    color10: "#4A4A4A" # Stone gray
+
+  fill_palette:
+    fill1: "#8e8380"  # Light brown
+    fill2: "#8ba086"  # Light green
+    fill3: "#8c99a7"  # Light blue
+    fill4: "#b26f6b"  # Light red
+    fill5: "#bd908b"  # Light rust
+    fill6: "#f3d1b8"  # Light orange
+    fill7: "#9da183"  # Light olive
+    fill8: "#6b7894"  # Light indigo
+    fill9: "#f0e5d7"  # Very light beige
+    fill10: "#888888" # Light gray
+    fill11: "#3F51B5" # Indigo dye
+    fill12: "#8A7A8F" # Smoky mauve
+
+  typography:
+    fonts:
+    - family: sans_font
+      source: google
+      name: "Source Sans 3"
+    - family: serif_font
+      source: google
+      name: "EB Garamond"
+    - family: mono_font
+      source: google
+      name: "Fira Code"
+
+  plotting:
+    theme: "minimal"
+    point_size: 3
+    line_size: 1
+    axis_title_size: 12
+    axis_text_size: 10
+    title_size: 14
+    legend_position: "right"

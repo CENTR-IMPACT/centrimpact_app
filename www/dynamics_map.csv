@@ -1,0 +1,105 @@
+domain,dimension,descriptor,salience,qualtrics_id
+Contexts,Challenge Origin,There were ongoing negotiations between the Research Team and the Community,1,dynamics_c_challenge_0_1
+Contexts,Challenge Origin,The Community identified the challenge or issue,0.8,dynamics_c_challenge_0_2
+Contexts,Challenge Origin,The Community refined the challenge or issue,0.6,dynamics_c_challenge_0_3
+Contexts,Challenge Origin,The Research Team refined the challenge or issue,0.4,dynamics_c_challenge_0_4
+Contexts,Challenge Origin,The Research Team identified the challenge or issue,0.2,dynamics_c_challenge_0_5
+Contexts,Diversity,There are overlaps in identity memberships between the Research Team and the Community,1,dynamics_c_diversity_0_1
+Contexts,Diversity,Underrepresented and/or marginalized identities are a part of the Research Team,0.8,dynamics_c_diversity_0_2
+Contexts,Diversity,The Research Team is diverse in multiple ways and represents a range of identities,0.6,dynamics_c_diversity_0_3
+Contexts,Diversity,The Community is diverse in multiple ways and represents a range of identities,0.4,dynamics_c_diversity_0_4
+Contexts,Diversity,Underrepresented and/or marginalized identities are a part of the Community,0.2,dynamics_c_diversity_0_5
+Contexts,Resources,There were ongoing negotiations between the Research Team and the Community about the commitment of resources,1,dynamics_c_resources_0_1
+Contexts,Resources,The Research Team contributed resources,0.8,dynamics_c_resources_0_2
+Contexts,Resources,The Community contributed resources,0.6,dynamics_c_resources_0_3
+Contexts,Resources,All resources were provided by the Research Team,0.4,dynamics_c_resources_0_4
+Contexts,Resources,All resources were provided by the Community,0.2,dynamics_c_resources_0_5
+Contexts,Trust,Building on a history of trust and collaboration,1,dynamics_c_trust_0_1
+Contexts,Trust,Building on a history of trust and collaboration  the Research Team reached out to the Community,0.8,dynamics_c_trust_0_2
+Contexts,Trust,There were ongoing trust-building efforts between the Research Institution and the Community,0.6,dynamics_c_trust_0_3
+Contexts,Trust,Despite a history of mistrust  the Community reached out to the Research Team,0.4,dynamics_c_trust_0_4
+Contexts,Trust,Despite a history of mistrust  the Research Team reached out to the Community,0.2,dynamics_c_trust_0_5
+Partnership Processes,Beneficence,There were ongoing discussions to ensure both the Community and the Research Team would benefit,1,dynamics_p_benef_0_1
+Partnership Processes,Beneficence,Benefits built upon and strengthened the Community’s cultural capital and wealth and agency,0.8,dynamics_p_benef_0_2
+Partnership Processes,Beneficence,Benefits aligned with the goals and purposes of the project,0.6,dynamics_p_benef_0_3
+Partnership Processes,Beneficence,The Community Partners benefitted from the processes,0.4,dynamics_p_benef_0_4
+Partnership Processes,Beneficence,The Research Team benefitted from the processes,0.2,dynamics_p_benef_0_5
+Partnership Processes,Decision Making,Decision making was conducted through clear and understood processes,1,dynamics_p_decision_0_1
+Partnership Processes,Decision Making,Decision making processes recognized and supported the community’s cultural capital and agency,0.8,dynamics_p_decision_0_2
+Partnership Processes,Decision Making,Community Partners contributed to the decision making processes,0.6,dynamics_p_decision_0_3
+Partnership Processes,Decision Making,The Research Team contributed to the decision making processes,0.4,dynamics_p_decision_0_4
+Partnership Processes,Decision Making,Decisions were made to align the ongoing work with the goals and purposes of the project,0.2,dynamics_p_decision_0_5
+Partnership Processes,Reflection,The Research Team and Community partners engaged in and benefitted from intentional collaborative reflection activities,1,dynamics_p_reflect_0_1
+Partnership Processes,Reflection,Community partners engaged in and benefitted from intentional reflection activities,0.8,dynamics_p_reflect_0_2
+Partnership Processes,Reflection,Strategies and new practices were developed through intentional reflection activities,0.6,dynamics_p_reflect_0_3
+Partnership Processes,Reflection,Lessons learned for all participants were identified through intentional reflection activities,0.4,dynamics_p_reflect_0_4
+Partnership Processes,Reflection,The Research Team engaged in and benefitted from intentional reflection activities,0.2,dynamics_p_reflect_0_5
+Partnership Processes,Tool Construction,The Community contributed to building the tools,1,dynamics_p_tool_0_1
+Partnership Processes,Tool Construction,Recognized and supported the Community’s cultural wealth and capital and agency,0.8,dynamics_p_tool_0_2
+Partnership Processes,Tool Construction,The Research Team contributed to building the tools,0.6,dynamics_p_tool_0_3
+Partnership Processes,Tool Construction,Made processes more clear and understandable,0.4,dynamics_p_tool_0_4
+Partnership Processes,Tool Construction,Promoted Efficiency,0.2,dynamics_p_tool_0_5
+Interventions and Research,Design and Facilitation,The Research Team contributed to the design and facilitation of interventions and research,1,dynamics_r_design_0_1
+Interventions and Research,Design and Facilitation,The Community contributed to the design and facilitation of interventions and research,0.8,dynamics_r_design_0_2
+Interventions and Research,Design and Facilitation,The design and facilitation of interventions and research recognized and supported the Communitys cultural wealth and capital and agency,0.6,dynamics_r_design_0_3
+Interventions and Research,Design and Facilitation,The design and facilitation of interventions and research provided opportunities to generate new understandings for the discipline(s) and to benefit the Community,0.4,dynamics_r_design_0_4
+Interventions and Research,Design and Facilitation,The design and facilitation of interventions and research aligned with the goals and purposes of the project,0.2,dynamics_r_design_0_5
+Interventions and Research,Duration,Multiple Years,1,dynamics_r_duration_0_1
+Interventions and Research,Duration,A Year or Less,0.8,dynamics_r_duration_0_2
+Interventions and Research,Duration,A Semester or Less,0.6,dynamics_r_duration_0_3
+Interventions and Research,Duration,A Month or Less,0.4,dynamics_r_duration_0_4
+Interventions and Research,Duration,A Week or Less,0.2,dynamics_r_duration_0_5
+Interventions and Research,Frequency,At least Monthly,1,dynamics_r_frequency_0_1
+Interventions and Research,Frequency,At least Weekly,0.8,dynamics_r_frequency_0_2
+Interventions and Research,Frequency,More than once,0.6,dynamics_r_frequency_0_3
+Interventions and Research,Frequency,Daily or more,0.4,dynamics_r_frequency_0_4
+Interventions and Research,Frequency,Once,0.2,dynamics_r_frequency_0_5
+Interventions and Research,Research Questions,The Community contributed to the research question or questions to be explored,1,dynamics_r_questions_0_1
+Interventions and Research,Research Questions,The Research Team contributed to the research question or questions to be explored,0.8,dynamics_r_questions_0_2
+Interventions and Research,Research Questions,The research question or questions recognized and supported the Community’s cultural wealth and capital and agency,0.6,dynamics_r_questions_0_3
+Interventions and Research,Research Questions,The research question or questions provided opportunities to generate new understandings for the discipline(s) of the Research Team and to benefit the Community,0.4,dynamics_r_questions_0_4
+Interventions and Research,Research Questions,The research question or questions were designed to align with the goals and purposes of the project,0.2,dynamics_r_questions_0_5
+Interventions and Research,Voice,Materials and Events utilized Community-Centered Language,1,dynamics_r_voice_0_1
+Interventions and Research,Voice,Materials and Events were fit specifically for local settings,0.8,dynamics_r_voice_0_2
+Interventions and Research,Voice,Materials and Events were aligned with the goals and purposes of the project,0.6,dynamics_r_voice_0_3
+Interventions and Research,Voice,Materials and Events were culture-centered activities,0.4,dynamics_r_voice_0_4
+Interventions and Research,Voice,Materials and Events utilized Academic Language,0.2,dynamics_r_voice_0_5
+Engaged Learning,Civic Learning,Opportunities are offered for meaning-making and making connections between civic learning and real-world contexts,1,dynamics_l_civics_0_1
+Engaged Learning,Civic Learning,Course and community activities are facilitated to support civic learning,0.8,dynamics_l_civics_0_2
+Engaged Learning,Civic Learning,Civic learning expectations and outcomes are included in the course syllabus,0.6,dynamics_l_civics_0_3
+Engaged Learning,Civic Learning,There is an alignment across the syllabus the activities and the assessments to ensure civic learning is assessed throughout the course,0.4,dynamics_l_civics_0_4
+Engaged Learning,Civic Learning,Opportunities are offered for meaning-making and making connections between civic learning and academic work in the course,0.2,dynamics_l_civics_0_5
+Engaged Learning,Integration,The Community is included in the decision making around the inclusion of engaged learning in the broader research project,1,dynamics_l_integrate_0_1
+Engaged Learning,Integration,Students engagement activities with the Community support research and intervention activities by building capacities and capabilities and/or generating useful understandings and/or practices,0.75,dynamics_l_integrate_0_2
+Engaged Learning,Integration,Course artifacts and outputs support research and intervention activities by building capacities and capabilities and/or generating useful understandings and/or practices,0.5,dynamics_l_integrate_0_3
+Engaged Learning,Integration,Relationships and dynamics between the Instructor the Community and the Students are similar to the relationships and dynamics of the broader research project,0.25,dynamics_l_integrate_0_4
+Engaged Learning,Learning Goals,Critical reflection activities are used to deepen collaborative relationships with the Community,1,dynamics_l_lrngls_0_1
+Engaged Learning,Learning Goals,Critical reflection activities are offered that help students make connections across course content and beyond,0.8,dynamics_l_lrngls_0_2
+Engaged Learning,Learning Goals,There are ongoing critical reflection activities with scaffolding that allow deepened reflections on engaged experiences,0.6,dynamics_l_lrngls_0_3
+Engaged Learning,Learning Goals,Expectations for critical reflection are built into the course requirements and are stated in the syllabus,0.4,dynamics_l_lrngls_0_4
+Engaged Learning,Learning Goals,Critical reflection activities are used to enhance course content,0.2,dynamics_l_lrngls_0_5
+Engaged Learning,Reciprocity,There is ongoing collaboration between the Community the Instructor and Students in all phases of the project or engaged experience,1,dynamics_l_rcprcity_0_1
+Engaged Learning,Reciprocity,Students are aware of their accountability to contributing to the benefit of the Community,0.8,dynamics_l_rcprcity_0_2
+Engaged Learning,Reciprocity,Activities are co-constructed by the Instructor Community and Students that benefit the Community and enrich Student learning,0.6,dynamics_l_rcprcity_0_3
+Engaged Learning,Reciprocity,Expectations around Community benefit and Student learning are included in the course syllabus,0.4,dynamics_l_rcprcity_0_4
+Engaged Learning,Reciprocity,The Instructor facilitates an activity or activities that benefit the Community and enrich Student learning,0.2,dynamics_l_rcprcity_0_5
+Outcomes,Capacities and Capabilities Strengthened,Participant and/or Community well-being,1,dynamics_o_candc_0_1
+Outcomes,Capacities and Capabilities Strengthened,Participant and/or Community agency,0.8,dynamics_o_candc_0_2
+Outcomes,Capacities and Capabilities Strengthened,Mutual trust and respect between the Community and the Research Team and/or the Research Institution,0.6,dynamics_o_candc_0_3
+Outcomes,Capacities and Capabilities Strengthened,The fabric and cohesion of the Community,0.4,dynamics_o_candc_0_4
+Outcomes,Capacities and Capabilities Strengthened,The distribution of opportunity and/or attainment,0.2,dynamics_o_candc_0_5
+Outcomes,Goals Met,Mostly for the Community  some for the Research Team,1,dynamics_o_goals_0_1
+Outcomes,Goals Met,Entirely for the Community,0.8,dynamics_o_goals_0_2
+Outcomes,Goals Met,Equally for the Research Team and the Community,0.6,dynamics_o_goals_0_3
+Outcomes,Goals Met,Mostly for the Research Team some for the Community,0.4,dynamics_o_goals_0_4
+Outcomes,Goals Met,Entirely for the Research Team,0.2,dynamics_o_goals_0_5
+Outcomes,Outputs Delivered,Community-Based Outputs that Reach Broader Community Members and Institutions,1,dynamics_o_outputs_0_1
+Outcomes,Outputs Delivered,Community-Based Outputs that Benefit Direct Community Partners,0.8,dynamics_o_outputs_0_2
+Outcomes,Outputs Delivered,Academic and/or Community-Based Outputs in a Range of Venues,0.6,dynamics_o_outputs_0_3
+Outcomes,Outputs Delivered,Academic Outputs that Advance the Field,0.4,dynamics_o_outputs_0_4
+Outcomes,Outputs Delivered,Academic Outputs that Benefit the Research Team,0.2,dynamics_o_outputs_0_5
+Outcomes,Sustainability,Concrete strategies for further engagement,1,dynamics_o_sustain_0_1
+Outcomes,Sustainability,Available resources,0.8,dynamics_o_sustain_0_2
+Outcomes,Sustainability,Trust and respect in partnership,0.6,dynamics_o_sustain_0_3
+Outcomes,Sustainability,Ongoing shared vision and common goals,0.4,dynamics_o_sustain_0_4
+Outcomes,Sustainability,Infrastructures for further engagement,0.2,dynamics_o_sustain_0_5
