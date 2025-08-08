@@ -1,0 +1,292 @@
+---
+title: Test Project
+subtitle: ""
+
+funding: ""
+params:
+  project_title: Test Project
+  report_date: 2025-08-08
+  data_dir: "data"
+  plots_dir: "plots"
+license: ""
+format: html
+
+date: 2025-08-08
+appendix-style: default
+highlight-style: github
+code-block-bg: false
+---
+
+```{r}
+#| label: setup
+#| include: false
+#| warning: false
+#| fig-show: hide
+#| output: false
+#| message: false
+#| results: hide
+
+# Load Libraries
+library(knitr)
+library(kableExtra)
+library(readr)
+
+# Assign score values
+alignment_score <- round(as.numeric(0.02), 2)
+dynamics_score <- round(as.numeric(0.991304347826087), 2)
+cascade_score <- round(as.numeric(0.841269841269841), 2)
+
+# Load Dataframes
+alignment_df <- read_csv("data/alignment_data.csv")
+cascade_df <- read_csv("data/cascade_data.csv")
+dynamics_df <- read_csv("data/dynamics_data.csv")
+indicators_df <- read_csv("data/indicators_data.csv")
+
+```
+
+
+## Introduction
+
+<!-- Enter a brief description of your research project below.  -->
+<!--------This text can be formatted in Quarto Markdown.---------->
+<!-- See https://quarto.org/docs/authoring/markdown-basics.html -->
+
+
+
+<!-- Enter a brief description of your research project above.  -->
+
+```{r}
+#| label: dashboard-plot
+#| fig-cap: "CEnTR-IMPACT scores."
+#| echo: false
+#| out-width: "100%"
+
+# Display the plot
+knitr::include_graphics(
+  "plots/dashboard_plot.png"
+ )
+
+```
+
+::: {.callout-note}
+CEnTR\*IMPACT provides quantitative metrics specifically designed to effectively
+communicate the value of community-engaged scholarship within academic evaluation
+systems. These metrics enable scholars to demonstrate impact to review committees,
+research teams, and funders through compelling data-driven narratives that complement
+qualitative approaches. CEnTR\*IMPACT is grounded in the Community-Based Participatory
+Research (CBPR) methodology.
+:::
+
+## Direct Indicators
+
+Direct Indicators are status counts of information including the number of partner
+institutions; the amount of time spent working together; the total number of attendees
+and participants at events and meetings; the total number of tools, documents, processes
+created to ensure fairness and accountability through the partnership; the total
+number of products---e.g., community-facing, scholar-facing---created; if engaged
+learning is a component of the project; and the number of agreed-to outcomes that
+have been met through the project.
+
+### Results
+
+```{r}
+#| label: indicators-plot
+#| fig-cap: "CEnTR-IMPACT Direct Indicators."
+#| echo: false
+#| out-width: "100%"
+
+# Display the plot
+knitr::include_graphics(
+  "plots/indicators_plot.png"
+)
+```
+
+```{r}
+#| echo: false
+
+indicators_df |>
+  kable() |>
+  kable_styling(
+    bootstrap_options = c("striped", "hover", "condensed"),
+    stripe_color = "#F2ECD7"
+  )
+```
+
+### Analysis
+
+<!--     Enter your analysis of the direct indicators below.     -->
+<!------- This text can be formatted in Quarto Markdown. --------->
+<!-- See https://quarto.org/docs/authoring/markdown-basics.html -->
+
+
+
+<!--     Enter your analysis of the direct indicators above.     -->
+
+### Notes & Next Steps
+
+<!--     Enter your analysis of the direct indicators below.     -->
+<!------- This text can be formatted in Quarto Markdown. --------->
+<!-- See https://quarto.org/docs/authoring/markdown-basics.html -->
+
+
+
+<!--     Enter your analysis of the direct indicators above.     -->
+
+## Project Alignment
+
+Project Alignment illuminates the degree to which community partners and university researchers are aligned on the following areas: Goals, Values, Roles, Resources, Activities, Empowerment,
+Outputs, and Outcomes. Project Alignment is determined through a common survey provided to researchers and community partners.
+
+### Results
+
+```{r}
+#| label: alignment-plot
+#| fig-cap: "Project Alignment visualization."
+#| echo: false
+#| out-width: "100%"
+```
+
+The Alignment Score ($S_a$) is `r alignment_score`.
+
+`r knitr::include_graphics("plots/alignment_plot.png")`
+
+```{r}
+#| echo: false
+
+alignment_df |>
+  kable() |>
+  kable_styling(
+    bootstrap_options = c("striped", "hover", "condensed"),
+    stripe_color = "#F2ECD7"
+  )
+```
+
+### Analysis
+
+<!--     Enter your analysis of the project alignment below.     -->
+<!------- This text can be formatted in Quarto Markdown. --------->
+<!-- See https://quarto.org/docs/authoring/markdown-basics.html -->
+
+
+
+<!--     Enter your analysis of the project alignment above.     -->
+
+### Notes & Next Steps
+
+<!--     Enter your analysis of the project alignment below.     -->
+<!------- This text can be formatted in Quarto Markdown. --------->
+<!-- See https://quarto.org/docs/authoring/markdown-basics.html -->
+
+
+
+<!--     Enter your analysis of the project alignment above.     -->
+
+## Project Dynamics
+
+Project Dynamics information provides insight into where the project started, how the project is being carried out, and where the project ended up so far. Providing indicators across the domains of contexts, processes, research, and outcomes, Project Dynamics provides a map for facilitating a more successful and fair partnership.
+
+### Results
+
+The Project Dynamics Score ($S_d$) is `r dynamics_score`.
+
+```{r}
+#| label: dynamics-plot
+#| fig-cap: "CEnTR-IMPACT Project Dynamics scores."
+#| echo: false
+#| out-width: "75%"
+
+# Display the plot
+knitr::include_graphics(
+  "plots/dynamics_plot.png"
+)
+```
+
+```{r}
+#| echo: false
+
+dynamics_df |>
+  kable() |>
+  kable_styling(
+    bootstrap_options = c("striped", "hover", "condensed"),
+    stripe_color = "#F2ECD7"
+  )
+```
+
+### Analysis
+
+<!--     Enter your analysis of the project dynamics below.     -->
+<!------- This text can be formatted in Quarto Markdown. --------->
+<!-- See https://quarto.org/docs/authoring/markdown-basics.html -->
+
+
+
+<!--     Enter your analysis of the project dynamics above.     -->
+
+### Notes & Next Steps
+
+<!--     Enter your analysis of the project dynamics below.     -->
+<!------- This text can be formatted in Quarto Markdown. --------->
+<!-- See https://quarto.org/docs/authoring/markdown-basics.html -->
+
+
+<!--     Enter your analysis of the project dynamics above.     -->
+
+## Project Cascade Effects
+
+Cascade Effects is a measure of the *potential* for community-engaged research impacts to spread to people based on the *structure* of an estimated model of the project's social network across three degrees. The first degree (1°) is comprised of the project staff and community participants directly involved in the project, and the second (2°) and third (3°) degrees are spread outwardly from there.
+
+### Results
+
+The Cascade Effects Score ($S_c$) is `r cascade_score`.
+
+```{r}
+#| label: cascade-plot
+#| fig-cap: "Project Cascade Effects visualization."
+#| echo: false
+#| out-width: "75%"
+
+knitr::include_graphics("plots/cascade_plot.png")
+```
+
+
+```{r}
+#| echo: false
+
+cascade_df |>
+  kable() |>
+  kable_styling(
+    bootstrap_options = c("striped", "hover", "condensed"),
+    stripe_color = "#F2ECD7"
+  )
+```
+
+### Analysis
+
+<!--     Enter your analysis of the cascade effects below.     -->
+<!------- This text can be formatted in Quarto Markdown. --------->
+<!-- See https://quarto.org/docs/authoring/markdown-basics.html -->
+
+
+
+<!--     Enter your analysis of the cascade effects above.     -->
+
+### Notes & Next Steps
+
+<!--     Enter your analysis of the cascade effects below.     -->
+<!------- This text can be formatted in Quarto Markdown. --------->
+<!-- See https://quarto.org/docs/authoring/markdown-basics.html -->
+
+
+
+<!--     Enter your analysis of the cascade effects above.     -->
+
+## Colophon {.appendix}
+
+This report was prepared using the *CENTR\*SEEK Report Generation* template v. 0.2.0, designed by Jeremy F. Price. The template is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License (CC BY-NC-SA 4.0). This license applies only to the template structure and formatting, not to the content of the report.
+
+The software used to generate this report from data and analysis provided by the project team is licensed under the MIT License. For details, see https://github.com/CENTR-IMPACT/generate_report.
+
+The CEnTR\*IMPACT metrics, associated methodologies, and visualizations used in this report were developed by Jeremy F. Price. Please cite as:
+Price, JF. (2025). CEnTR\*IMPACT Metrics for Community-Engaged Scholarship. [Publisher or repository, if available]
+
+![](centr-impact-logo.png){fig-align="center" width=10%}

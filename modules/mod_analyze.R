@@ -243,7 +243,7 @@ mod_analyze_server <- function(id, project_data) {
 
       # Debug the final return structure
       final_result <- list(
-        score = 1 - (result$dynamics_score %||% 0), # Invert Gini to represent balance
+        score = result$dynamics_score %||% 0, # Use dynamics score directly
         domains = result$domain_df %||% data.frame(),
         dimensions = result$dynamics_df %||% data.frame()
       )
@@ -294,7 +294,7 @@ mod_analyze_server <- function(id, project_data) {
 
       # Create return object
       ret_val <- list(
-        score = 1 - (result$cascade_score %||% 0), # Invert Gini to represent balance
+        score = result$cascade_score %||% 0, # Use cascade score directly
         data = result$cascade_df %||% data.frame()
       )
 
