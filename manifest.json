@@ -338,37 +338,6 @@
         "Archs": "Rcpp.so.dSYM"
       }
     },
-    "archive": {
-      "Source": "CRAN",
-      "Repository": "https://cloud.r-project.org",
-      "description": {
-        "Package": "archive",
-        "Title": "Multi-Format Archive and Compression Support",
-        "Version": "1.1.12",
-        "Authors@R": "c(\n    person(\"Jim\", \"Hester\", role = \"aut\",\n           comment = c(ORCID = \"0000-0002-2739-7082\")),\n    person(\"Gábor\", \"Csárdi\", , \"csardi.gabor@gmail.com\", role = c(\"aut\", \"cre\")),\n    person(\"Ondrej\", \"Holy\", role = \"cph\",\n           comment = \"archive_write_add_filter implementation\"),\n    person(\"RStudio\", role = c(\"cph\", \"fnd\"))\n  )",
-        "Description": "Bindings to 'libarchive' <http://www.libarchive.org> the\n    Multi-format archive and compression library. Offers R connections and\n    direct extraction for many archive formats including 'tar', 'ZIP',\n    '7-zip', 'RAR', 'CAB' and compression formats including 'gzip',\n    'bzip2', 'compress', 'lzma' and 'xz'.",
-        "License": "MIT + file LICENSE",
-        "URL": "https://archive.r-lib.org/, https://github.com/r-lib/archive",
-        "BugReports": "https://github.com/r-lib/archive/issues",
-        "Depends": "R (>= 3.6.0)",
-        "Imports": "cli, glue, rlang, tibble",
-        "Suggests": "covr, testthat",
-        "LinkingTo": "cli",
-        "ByteCompile": "true",
-        "Encoding": "UTF-8",
-        "RoxygenNote": "7.2.1.9000",
-        "SystemRequirements": "libarchive: libarchive-dev (deb), libarchive-devel\n(rpm), libarchive (homebrew), libarchive_dev (csw)",
-        "Biarch": "true",
-        "NeedsCompilation": "yes",
-        "Packaged": "2025-03-20 22:43:19 UTC; gaborcsardi",
-        "Author": "Jim Hester [aut] (<https://orcid.org/0000-0002-2739-7082>),\n  Gábor Csárdi [aut, cre],\n  Ondrej Holy [cph] (archive_write_add_filter implementation),\n  RStudio [cph, fnd]",
-        "Maintainer": "Gábor Csárdi <csardi.gabor@gmail.com>",
-        "Repository": "CRAN",
-        "Date/Publication": "2025-03-20 23:10:05 UTC",
-        "Built": "R 4.4.1; aarch64-apple-darwin20; 2025-03-20 23:53:04 UTC; unix",
-        "Archs": "archive.so.dSYM"
-      }
-    },
     "askpass": {
       "Source": "CRAN",
       "Repository": "https://cloud.r-project.org",
@@ -1029,45 +998,6 @@
         "Date/Publication": "2025-07-10 10:30:05 UTC",
         "Built": "R 4.4.1; aarch64-apple-darwin20; 2025-07-10 10:40:16 UTC; unix",
         "Archs": "data_table.so.dSYM"
-      }
-    },
-    "datawizard": {
-      "Source": "CRAN",
-      "Repository": "https://cloud.r-project.org",
-      "description": {
-        "Type": "Package",
-        "Package": "datawizard",
-        "Title": "Easy Data Wrangling and Statistical Transformations",
-        "Version": "1.2.0",
-        "Authors@R": "c(\n    person(\"Indrajeet\", \"Patil\", , \"patilindrajeet.science@gmail.com\", role = \"aut\",\n           comment = c(ORCID = \"0000-0003-1995-6531\")),\n    person(\"Etienne\", \"Bacher\", , \"etienne.bacher@protonmail.com\", role = c(\"aut\", \"cre\"),\n           comment = c(ORCID = \"0000-0002-9271-5075\")),\n    person(\"Dominique\", \"Makowski\", , \"dom.makowski@gmail.com\", role = \"aut\",\n           comment = c(ORCID = \"0000-0001-5375-9967\")),\n    person(\"Daniel\", \"Lüdecke\", , \"d.luedecke@uke.de\", role = \"aut\",\n           comment = c(ORCID = \"0000-0002-8895-3206\")),\n    person(\"Mattan S.\", \"Ben-Shachar\", , \"matanshm@post.bgu.ac.il\", role = \"aut\",\n           comment = c(ORCID = \"0000-0002-4287-4801\")),\n    person(\"Brenton M.\", \"Wiernik\", , \"brenton@wiernik.org\", role = \"aut\",\n           comment = c(ORCID = \"0000-0001-9560-6336\")),\n    person(\"Rémi\", \"Thériault\", , \"remi.theriault@mail.mcgill.ca\", role = \"ctb\",\n           comment = c(ORCID = \"0000-0003-4315-6788\")),\n    person(\"Thomas J.\", \"Faulkenberry\", , \"faulkenberry@tarleton.edu\", role = \"rev\"),\n    person(\"Robert\", \"Garrett\", , \"rcg4@illinois.edu\", role = \"rev\")\n  )",
-        "Maintainer": "Etienne Bacher <etienne.bacher@protonmail.com>",
-        "Description": "A lightweight package to assist in key steps involved in any data\n    analysis workflow: (1) wrangling the raw data to get it in the needed form,\n    (2) applying preprocessing steps and statistical transformations, and\n    (3) compute statistical summaries of data properties and distributions.\n    It is also the data wrangling backend for packages in 'easystats' ecosystem.\n    References: Patil et al. (2022) <doi:10.21105/joss.04684>.",
-        "License": "MIT + file LICENSE",
-        "URL": "https://easystats.github.io/datawizard/",
-        "BugReports": "https://github.com/easystats/datawizard/issues",
-        "Depends": "R (>= 4.0)",
-        "Imports": "insight (>= 1.3.1), stats, utils",
-        "Suggests": "bayestestR, boot, BH, brms, curl, data.table, dplyr (>= 1.1),\neffectsize, emmeans, gamm4, ggplot2 (>= 3.5.0), gt, haven,\nhttr, knitr, lme4, mediation, modelbased, nanoparquet,\nparameters (>= 0.21.7), performance (>= 0.14.0), poorman (>=\n0.2.7), psych, readxl, readr, rio, rmarkdown, rstanarm, see,\ntestthat (>= 3.2.1), tibble, tidyr, withr",
-        "VignetteBuilder": "knitr",
-        "Encoding": "UTF-8",
-        "Language": "en-US",
-        "RoxygenNote": "7.3.2",
-        "Config/testthat/edition": "3",
-        "Config/testthat/parallel": "true",
-        "Config/Needs/website": "easystats/easystatstemplate",
-        "NeedsCompilation": "no",
-        "Packaged": "2025-07-17 11:33:03 UTC; etienne",
-        "Author": "Indrajeet Patil [aut] (ORCID: <https://orcid.org/0000-0003-1995-6531>),\n  Etienne Bacher [aut, cre] (ORCID:\n    <https://orcid.org/0000-0002-9271-5075>),\n  Dominique Makowski [aut] (ORCID:\n    <https://orcid.org/0000-0001-5375-9967>),\n  Daniel Lüdecke [aut] (ORCID: <https://orcid.org/0000-0002-8895-3206>),\n  Mattan S. Ben-Shachar [aut] (ORCID:\n    <https://orcid.org/0000-0002-4287-4801>),\n  Brenton M. Wiernik [aut] (ORCID:\n    <https://orcid.org/0000-0001-9560-6336>),\n  Rémi Thériault [ctb] (ORCID: <https://orcid.org/0000-0003-4315-6788>),\n  Thomas J. Faulkenberry [rev],\n  Robert Garrett [rev]",
-        "Repository": "RSPM",
-        "Date/Publication": "2025-07-17 12:10:02 UTC",
-        "Built": "R 4.4.0; ; 2025-07-18 11:10:40 UTC; unix",
-        "RemoteType": "standard",
-        "RemoteRef": "datawizard",
-        "RemotePkgRef": "datawizard",
-        "RemoteRepos": "https://packagemanager.posit.co/cran/latest",
-        "RemoteReposName": "CRAN",
-        "RemotePkgPlatform": "aarch64-apple-darwin20",
-        "RemoteSha": "1.2.0"
       }
     },
     "digest": {
@@ -1900,39 +1830,6 @@
         "Archs": "igraph.so.dSYM"
       }
     },
-    "insight": {
-      "Source": "CRAN",
-      "Repository": "https://cloud.r-project.org",
-      "description": {
-        "Type": "Package",
-        "Package": "insight",
-        "Title": "Easy Access to Model Information for Various Model Objects",
-        "Version": "1.3.1",
-        "Authors@R": "\n    c(person(given = \"Daniel\",\n             family = \"Lüdecke\",\n             role = c(\"aut\", \"cre\"),\n             email = \"officialeasystats@gmail.com\",\n             comment = c(ORCID = \"0000-0002-8895-3206\")),\n      person(given = \"Dominique\",\n             family = \"Makowski\",\n             role = c(\"aut\", \"ctb\"),\n             email = \"dom.makowski@gmail.com\",\n             comment = c(ORCID = \"0000-0001-5375-9967\")),\n      person(given = \"Indrajeet\",\n             family = \"Patil\",\n             role = c(\"aut\", \"ctb\"),\n             email = \"patilindrajeet.science@gmail.com\",\n             comment = c(ORCID = \"0000-0003-1995-6531\")),\n      person(given = \"Philip\",\n             family = \"Waggoner\",\n             role = c(\"aut\", \"ctb\"),\n             email = \"philip.waggoner@gmail.com\",\n             comment = c(ORCID = \"0000-0002-7825-7573\")),\n      person(given = \"Mattan S.\",\n             family = \"Ben-Shachar\",\n             role = c(\"aut\", \"ctb\"),\n             email = \"matanshm@post.bgu.ac.il\",\n             comment = c(ORCID = \"0000-0002-4287-4801\")),\n      person(given = \"Brenton M.\",\n             family = \"Wiernik\",\n             role = c(\"aut\", \"ctb\"),\n             email = \"brenton@wiernik.org\",\n             comment = c(ORCID = \"0000-0001-9560-6336\")),\n      person(given = \"Vincent\",\n             family = \"Arel-Bundock\",\n             email = \"vincent.arel-bundock@umontreal.ca\",\n             role = c(\"aut\", \"ctb\"),\n             comment = c(ORCID = \"0000-0003-2042-7063\")),\n      person(given = \"Etienne\",\n             family = \"Bacher\",\n             email = \"etienne.bacher@protonmail.com\",\n             role = c(\"aut\", \"ctb\"),\n             comment = c(ORCID = \"0000-0002-9271-5075\")),\n      person(given = \"Alex\",\n             family = \"Hayes\",\n             role = c(\"rev\"),\n             email = \"alexpghayes@gmail.com\",\n             comment = c(ORCID = \"0000-0002-4985-5160\")),\n      person(given = \"Grant\",\n             family = \"McDermott\",\n             role = c(\"ctb\"),\n             email = \"grantmcd@uoregon.edu\",\n             comment = c(ORCID = \"0000-0001-7883-8573\")),\n      person(given = \"Rémi\",\n             family = \"Thériault\",\n             role = \"ctb\",\n             email = \"remi.theriault@mail.mcgill.ca\",\n             comment = c(ORCID = \"0000-0003-4315-6788\")),\n      person(given = \"Alex\",\n             family = \"Reinhart\",\n             role = \"ctb\",\n             email = \"areinhar@stat.cmu.edu\",\n             comment = c(ORCID = \"0000-0002-6658-514X\")))",
-        "Maintainer": "Daniel Lüdecke <officialeasystats@gmail.com>",
-        "Description": "A tool to provide an easy, intuitive and consistent\n    access to information contained in various R models, like model\n    formulas, model terms, information about random effects, data that was\n    used to fit the model or data from response variables. 'insight'\n    mainly revolves around two types of functions: Functions that find\n    (the names of) information, starting with 'find_', and functions that\n    get the underlying data, starting with 'get_'. The package has a\n    consistent syntax and works with many different model objects, where\n    otherwise functions to access these information are missing.",
-        "License": "GPL-3",
-        "URL": "https://easystats.github.io/insight/",
-        "BugReports": "https://github.com/easystats/insight/issues",
-        "Depends": "R (>= 3.6)",
-        "Imports": "methods, stats, utils",
-        "Suggests": "AER, afex, aod, ape, BayesFactor, bayestestR, bbmle,\nbdsmatrix, betareg, bife, biglm, BH, blavaan (>= 0.5-5), blme,\nboot, brms, broom, car, carData, censReg, cgam, clubSandwich,\ncobalt, coxme, cplm, crch, curl, datawizard, dbarts,\neffectsize, emmeans, epiR, estimatr, feisr, fixest (>= 0.11.2),\nfungible, fwb, gam, gamlss, gamlss.data, gamm4, gbm, gee,\ngeepack, geoR, GLMMadaptive, glmmTMB (>= 1.1.10), glmtoolbox,\ngmnl, grDevices, gt, httptest2, httr2, interp, ivreg, JM,\nknitr, lavaan, lavaSearch2, lfe, lme4, lmerTest, lmtest,\nlogistf, logitr, marginaleffects (>= 0.26.0), MASS, Matrix,\nmclogit, mclust, MCMCglmm, merTools, metaBMA, metadat, metafor,\nmetaplus, mgcv, mice (>= 3.17.0), mlogit, mmrm, modelbased (>=\n0.9.0), multgee, MuMIn, nestedLogit, nlme, nnet, nonnest2,\nordinal, panelr, parameters, parsnip, pbkrtest, performance,\nphylolm, plm, poorman, PROreg (>= 1.3.0), pscl, psych,\nquantreg, Rcpp, RcppEigen, rmarkdown, rms, robustbase,\nrobustlmm, rpart, rstanarm (>= 2.21.1), rstantools (>= 2.1.0),\nrstudioapi, RWiener, sandwich, sdmTMB, serp, speedglm, splines,\nstatmod, survey, survival, svylme, testthat, tinytable (>=\n0.8.0), TMB, truncreg, tune, tweedie, VGAM, WeightIt, withr",
-        "VignetteBuilder": "knitr",
-        "Encoding": "UTF-8",
-        "Language": "en-US",
-        "RoxygenNote": "7.3.2",
-        "Config/testthat/edition": "3",
-        "Config/testthat/parallel": "true",
-        "Config/Needs/website": "easystats/easystatstemplate",
-        "Config/Needs/check": "stan-dev/cmdstanr",
-        "NeedsCompilation": "no",
-        "Packaged": "2025-06-30 19:37:43 UTC; Daniel",
-        "Author": "Daniel Lüdecke [aut, cre] (ORCID:\n    <https://orcid.org/0000-0002-8895-3206>),\n  Dominique Makowski [aut, ctb] (ORCID:\n    <https://orcid.org/0000-0001-5375-9967>),\n  Indrajeet Patil [aut, ctb] (ORCID:\n    <https://orcid.org/0000-0003-1995-6531>),\n  Philip Waggoner [aut, ctb] (ORCID:\n    <https://orcid.org/0000-0002-7825-7573>),\n  Mattan S. Ben-Shachar [aut, ctb] (ORCID:\n    <https://orcid.org/0000-0002-4287-4801>),\n  Brenton M. Wiernik [aut, ctb] (ORCID:\n    <https://orcid.org/0000-0001-9560-6336>),\n  Vincent Arel-Bundock [aut, ctb] (ORCID:\n    <https://orcid.org/0000-0003-2042-7063>),\n  Etienne Bacher [aut, ctb] (ORCID:\n    <https://orcid.org/0000-0002-9271-5075>),\n  Alex Hayes [rev] (ORCID: <https://orcid.org/0000-0002-4985-5160>),\n  Grant McDermott [ctb] (ORCID: <https://orcid.org/0000-0001-7883-8573>),\n  Rémi Thériault [ctb] (ORCID: <https://orcid.org/0000-0003-4315-6788>),\n  Alex Reinhart [ctb] (ORCID: <https://orcid.org/0000-0002-6658-514X>)",
-        "Repository": "CRAN",
-        "Date/Publication": "2025-06-30 22:10:02 UTC",
-        "Built": "R 4.4.1; ; 2025-07-04 05:53:30 UTC; unix"
-      }
-    },
     "irr": {
       "Source": "CRAN",
       "Repository": "https://cloud.r-project.org",
@@ -2350,41 +2247,6 @@
         "Date/Publication": "2024-12-14 00:30:02 UTC",
         "Built": "R 4.4.1; aarch64-apple-darwin20; 2025-01-24 20:20:02 UTC; unix",
         "Archs": "lpSolve.so.dSYM"
-      }
-    },
-    "lubridate": {
-      "Source": "CRAN",
-      "Repository": "https://cloud.r-project.org",
-      "description": {
-        "Type": "Package",
-        "Package": "lubridate",
-        "Title": "Make Dealing with Dates a Little Easier",
-        "Version": "1.9.4",
-        "Authors@R": "c(\n    person(\"Vitalie\", \"Spinu\", , \"spinuvit@gmail.com\", role = c(\"aut\", \"cre\")),\n    person(\"Garrett\", \"Grolemund\", role = \"aut\"),\n    person(\"Hadley\", \"Wickham\", role = \"aut\"),\n    person(\"Davis\", \"Vaughan\", role = \"ctb\"),\n    person(\"Ian\", \"Lyttle\", role = \"ctb\"),\n    person(\"Imanuel\", \"Costigan\", role = \"ctb\"),\n    person(\"Jason\", \"Law\", role = \"ctb\"),\n    person(\"Doug\", \"Mitarotonda\", role = \"ctb\"),\n    person(\"Joseph\", \"Larmarange\", role = \"ctb\"),\n    person(\"Jonathan\", \"Boiser\", role = \"ctb\"),\n    person(\"Chel Hee\", \"Lee\", role = \"ctb\")\n  )",
-        "Maintainer": "Vitalie Spinu <spinuvit@gmail.com>",
-        "Description": "Functions to work with date-times and time-spans: fast and\n    user friendly parsing of date-time data, extraction and updating of\n    components of a date-time (years, months, days, hours, minutes, and\n    seconds), algebraic manipulation on date-time and time-span objects.\n    The 'lubridate' package has a consistent and memorable syntax that\n    makes working with dates easy and fun.",
-        "License": "GPL (>= 2)",
-        "URL": "https://lubridate.tidyverse.org,\nhttps://github.com/tidyverse/lubridate",
-        "BugReports": "https://github.com/tidyverse/lubridate/issues",
-        "Depends": "methods, R (>= 3.2)",
-        "Imports": "generics, timechange (>= 0.3.0)",
-        "Suggests": "covr, knitr, rmarkdown, testthat (>= 2.1.0), vctrs (>= 0.6.5)",
-        "Enhances": "chron, data.table, timeDate, tis, zoo",
-        "VignetteBuilder": "knitr",
-        "Config/Needs/website": "tidyverse/tidytemplate",
-        "Config/testthat/edition": "3",
-        "Encoding": "UTF-8",
-        "LazyData": "true",
-        "RoxygenNote": "7.2.3",
-        "SystemRequirements": "C++11, A system with zoneinfo data (e.g.\n/usr/share/zoneinfo). On Windows the zoneinfo included with R\nis used.",
-        "Collate": "'Dates.r' 'POSIXt.r' 'util.r' 'parse.r' 'timespans.r'\n'intervals.r' 'difftimes.r' 'durations.r' 'periods.r'\n'accessors-date.R' 'accessors-day.r' 'accessors-dst.r'\n'accessors-hour.r' 'accessors-minute.r' 'accessors-month.r'\n'accessors-quarter.r' 'accessors-second.r' 'accessors-tz.r'\n'accessors-week.r' 'accessors-year.r' 'am-pm.r' 'time-zones.r'\n'numeric.r' 'coercion.r' 'constants.r' 'cyclic_encoding.r'\n'data.r' 'decimal-dates.r' 'deprecated.r' 'format_ISO8601.r'\n'guess.r' 'hidden.r' 'instants.r' 'leap-years.r'\n'ops-addition.r' 'ops-compare.r' 'ops-division.r'\n'ops-integer-division.r' 'ops-m+.r' 'ops-modulo.r'\n'ops-multiplication.r' 'ops-subtraction.r' 'package.r'\n'pretty.r' 'round.r' 'stamp.r' 'tzdir.R' 'update.r' 'vctrs.R'\n'zzz.R'",
-        "NeedsCompilation": "yes",
-        "Packaged": "2024-12-07 23:41:45 UTC; vitalie",
-        "Author": "Vitalie Spinu [aut, cre],\n  Garrett Grolemund [aut],\n  Hadley Wickham [aut],\n  Davis Vaughan [ctb],\n  Ian Lyttle [ctb],\n  Imanuel Costigan [ctb],\n  Jason Law [ctb],\n  Doug Mitarotonda [ctb],\n  Joseph Larmarange [ctb],\n  Jonathan Boiser [ctb],\n  Chel Hee Lee [ctb]",
-        "Repository": "CRAN",
-        "Date/Publication": "2024-12-08 12:10:02 UTC",
-        "Built": "R 4.4.1; aarch64-apple-darwin20; 2024-12-08 12:54:41 UTC; unix",
-        "Archs": "lubridate.so.dSYM"
       }
     },
     "magrittr": {
@@ -2988,34 +2850,6 @@
         "Repository": "RSPM",
         "Date/Publication": "2025-07-10 17:50:02 UTC",
         "Built": "R 4.4.0; x86_64-pc-linux-gnu; 2025-07-11 05:03:10 UTC; unix"
-      }
-    },
-    "qualtRics": {
-      "Source": "CRAN",
-      "Repository": "https://cloud.r-project.org",
-      "description": {
-        "Type": "Package",
-        "Package": "qualtRics",
-        "Title": "Download 'Qualtrics' Survey Data",
-        "Version": "3.2.1",
-        "Authors@R": "c(\n    person(\"Jasper\", \"Ginn\", , \"jasperginn@gmail.com\", role = \"aut\"),\n    person(\"Jackson\", \"Curtis\", , \"jcurtis210@gmail.com\", role = \"ctb\"),\n    person(\"Shaun\", \"Jackson\", , \"shaunbjackson@gmail.com\", role = \"ctb\"),\n    person(\"Samuel\", \"Kaminsky\", , \"samuel.e.kaminsky@gmail.com\", role = \"ctb\"),\n    person(\"Eric\", \"Knudsen\", , \"ericknud1@gmail.com\", role = \"ctb\"),\n    person(\"Joseph\", \"O'Brien\", , \"joseph.obrien@utexas.edu\", role = \"aut\"),\n    person(\"Daniel\", \"Seneca\", , \"seneca.danielh@gmail.com\", role = \"ctb\"),\n    person(\"Julia\", \"Silge\", , \"julia.silge@gmail.com\", role = c(\"aut\", \"cre\"),\n           comment = c(ORCID = \"0000-0002-3671-836X\")),\n    person(\"Phoebe\", \"Wong\", , \"phoebe.wong@berkeley.edu\", role = \"ctb\")\n  )",
-        "Description": "Provides functions to access survey results directly into R\n    using the 'Qualtrics' API. 'Qualtrics'\n    <https://www.qualtrics.com/about/> is an online survey and data\n    collection software platform. See <https://api.qualtrics.com/> for\n    more information about the 'Qualtrics' API.  This package is\n    community-maintained and is not officially supported by 'Qualtrics'.",
-        "License": "MIT + file LICENSE",
-        "URL": "https://docs.ropensci.org/qualtRics/,\nhttps://github.com/ropensci/qualtRics",
-        "BugReports": "https://github.com/ropensci/qualtRics/issues",
-        "Imports": "archive, cli, dplyr (>= 1.0), fs, glue, httr, jsonlite,\nlifecycle, lubridate, purrr, readr, rlang, sjlabelled, stringr,\ntibble, tidyr, withr",
-        "Suggests": "covr, knitr, rmarkdown, testthat (>= 3.0.0), vcr (>= 1.2.0),\nwebmockr",
-        "VignetteBuilder": "knitr",
-        "Encoding": "UTF-8",
-        "RoxygenNote": "7.3.2",
-        "Config/testthat/edition": "3",
-        "NeedsCompilation": "no",
-        "Packaged": "2024-08-16 15:52:29 UTC; juliasilge",
-        "Author": "Jasper Ginn [aut],\n  Jackson Curtis [ctb],\n  Shaun Jackson [ctb],\n  Samuel Kaminsky [ctb],\n  Eric Knudsen [ctb],\n  Joseph O'Brien [aut],\n  Daniel Seneca [ctb],\n  Julia Silge [aut, cre] (<https://orcid.org/0000-0002-3671-836X>),\n  Phoebe Wong [ctb]",
-        "Maintainer": "Julia Silge <julia.silge@gmail.com>",
-        "Repository": "CRAN",
-        "Date/Publication": "2024-08-16 16:20:02 UTC",
-        "Built": "R 4.4.0; ; 2024-08-16 17:57:27 UTC; unix"
       }
     },
     "ragg": {
@@ -3686,34 +3520,6 @@
         "Built": "R 4.4.0; ; 2024-04-25 05:38:34 UTC; unix"
       }
     },
-    "sjlabelled": {
-      "Source": "CRAN",
-      "Repository": "https://cloud.r-project.org",
-      "description": {
-        "Package": "sjlabelled",
-        "Type": "Package",
-        "Encoding": "UTF-8",
-        "Title": "Labelled Data Utility Functions",
-        "Version": "1.2.0",
-        "Authors@R": "c(\n    person(\"Daniel\", \"Lüdecke\", role = c(\"aut\", \"cre\"), email = \"d.luedecke@uke.de\", comment = c(ORCID = \"0000-0002-8895-3206\")),\n    person(\"avid\", \"Ranzolin\", role = \"ctb\", email = \"daranzolin@gmail.com\"),\n    person(\"Jonathan\", \"De Troye\", role = \"ctb\", email = \"detroyejr@outlook.com\")\n    )",
-        "Maintainer": "Daniel Lüdecke <d.luedecke@uke.de>",
-        "Description": "Collection of functions dealing with labelled data, like reading and \n    writing data between R and other statistical software packages like 'SPSS',\n    'SAS' or 'Stata', and working with labelled data. This includes easy ways \n    to get, set or change value and variable label attributes, to convert \n    labelled vectors into factors or numeric (and vice versa), or to deal with \n    multiple declared missing values.",
-        "License": "GPL-3",
-        "Depends": "R (>= 3.4)",
-        "Imports": "insight, datawizard, stats, tools, utils",
-        "Suggests": "dplyr, haven (>= 1.1.2), magrittr, sjmisc, sjPlot, knitr,\nrlang, rmarkdown, snakecase, testthat",
-        "URL": "https://strengejacke.github.io/sjlabelled/",
-        "BugReports": "https://github.com/strengejacke/sjlabelled/issues",
-        "RoxygenNote": "7.1.2",
-        "VignetteBuilder": "knitr",
-        "NeedsCompilation": "no",
-        "Packaged": "2022-04-10 09:09:11 UTC; DL",
-        "Author": "Daniel Lüdecke [aut, cre] (<https://orcid.org/0000-0002-8895-3206>),\n  avid Ranzolin [ctb],\n  Jonathan De Troye [ctb]",
-        "Repository": "CRAN",
-        "Date/Publication": "2022-04-10 09:30:02 UTC",
-        "Built": "R 4.4.0; ; 2024-04-06 03:02:35 UTC; unix"
-      }
-    },
     "sna": {
       "Source": "CRAN",
       "Repository": "https://cloud.r-project.org",
@@ -4171,34 +3977,6 @@
         "Built": "R 4.4.0; ; 2024-04-06 06:41:25 UTC; unix"
       }
     },
-    "timechange": {
-      "Source": "CRAN",
-      "Repository": "https://cloud.r-project.org",
-      "description": {
-        "Package": "timechange",
-        "Title": "Efficient Manipulation of Date-Times",
-        "Version": "0.3.0",
-        "Authors@R": "c(person(\"Vitalie\", \"Spinu\", email = \"spinuvit@gmail.com\", role = c(\"aut\", \"cre\")),\n             person(\"Google Inc.\", role = c(\"ctb\", \"cph\")))",
-        "Description": "Efficient routines for manipulation of date-time objects while\n   accounting for time-zones and daylight saving times. The package includes\n   utilities for updating of date-time components (year, month, day etc.),\n   modification of time-zones, rounding of date-times, period addition and\n   subtraction etc. Parts of the 'CCTZ' source code, released under the Apache\n   2.0 License, are included in this package. See\n   <https://github.com/google/cctz> for more details.",
-        "Depends": "R (>= 3.3)",
-        "License": "GPL (>= 3)",
-        "Encoding": "UTF-8",
-        "LinkingTo": "cpp11 (>= 0.2.7)",
-        "Suggests": "testthat (>= 0.7.1.99), knitr",
-        "SystemRequirements": "A system with zoneinfo data (e.g.\n/usr/share/zoneinfo) as well as a recent-enough C++11 compiler\n(such as g++-4.8 or later). On Windows the zoneinfo included\nwith R is used.",
-        "BugReports": "https://github.com/vspinu/timechange/issues",
-        "URL": "https://github.com/vspinu/timechange/",
-        "RoxygenNote": "7.2.1",
-        "NeedsCompilation": "yes",
-        "Packaged": "2024-01-18 08:57:24 UTC; vspinu",
-        "Author": "Vitalie Spinu [aut, cre],\n  Google Inc. [ctb, cph]",
-        "Maintainer": "Vitalie Spinu <spinuvit@gmail.com>",
-        "Repository": "CRAN",
-        "Date/Publication": "2024-01-18 09:20:02 UTC",
-        "Built": "R 4.4.0; aarch64-apple-darwin20; 2024-04-05 15:11:32 UTC; unix",
-        "Archs": "timechange.so.dSYM"
-      }
-    },
     "tinytex": {
       "Source": "CRAN",
       "Repository": "https://cloud.r-project.org",
@@ -4621,7 +4399,7 @@
       "checksum": "5fe2613f0084cfac9853279a7a336fa2"
     },
     ".Rprofile": {
-      "checksum": "012851afcb7073582b1b22da37050826"
+      "checksum": "060bff970c7ad43e88a4ab10a4b6aa79"
     },
     "CODE_OF_CONDUCT.md": {
       "checksum": "2d2a0d4f4992ac06de7c03997f97a0a3"
@@ -4639,7 +4417,7 @@
       "checksum": "4a9413147679c2d0a001a181c1a0ef30"
     },
     "modules/mod_analyze.R": {
-      "checksum": "c937524197d101bfd7da17efeedf66b5"
+      "checksum": "d0817875fa6cbd6b548bb2ff2a69e883"
     },
     "modules/mod_enter_data.R": {
       "checksum": "2d0e328ed60fb5471d484c68d2b9ba4a"
@@ -4663,7 +4441,7 @@
       "checksum": "01728a6b2aaf99107a37added2e3955a"
     },
     "renv.lock": {
-      "checksum": "3b49e998fd9c143c25476416053cb40b"
+      "checksum": "2095a3f121a0c0dc17ce234a7a05b5dd"
     },
     "server.R": {
       "checksum": "0847a3587f1567cb4d1a00d2da6fa436"
@@ -4681,7 +4459,7 @@
       "checksum": "738f6c0c1f923657301ace250f485664"
     },
     "utils/utils_data_io.R": {
-      "checksum": "e0f445275e0eec0dd6a59ec40972732d"
+      "checksum": "1025e50e6748d6ca674c6ade987f30cc"
     },
     "utils/utils_ui_components.R": {
       "checksum": "4830dbe7262b1cdf1b1ab868d65396a2"
@@ -4733,6 +4511,9 @@
     },
     "www/shinymgr-hexsticker.png": {
       "checksum": "214d79131e9a7c11d8d9d95d7bd89b84"
+    },
+    "www/Test-Project-20250808.qmd": {
+      "checksum": "0c2e04ed664c95528411d1081978c56f"
     },
     "www/Untitled-1.ai": {
       "checksum": "022b5fc438389c23f352194234267d85"
