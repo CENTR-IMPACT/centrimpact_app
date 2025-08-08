@@ -1,10 +1,12 @@
 # CEnTR*IMPACT Toolkit App
 
+![CEnTR*IMPACT Toolkit Logo](https://raw.githubusercontent.com/CENTR-IMPACT/centrimpact_app/refs/heads/main/www/centr_logo.png)
+
 Welcome to the CEnTR*IMPACT Toolkit! This guide will help you get the app running on your computer, even if you're new to R and RStudio.
 
 This toolkit provides an ensemble of metrics designed by and for community-engaged scholars to evaluate and communicate the impact of their work through quantitative measures that complement qualitative narratives.
 
-![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg) ![GitHub release (latest by date)](https://img.shields.io/github/v/release/CENTR-IMPACT/centrimpact_app) ![License: MIT](https://img.shields.io/badge/license-MIT-green.svg) [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](code_of_conduct.md)
+![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.16782864.svg)](https://doi.org/10.5281/zenodo.16782864) ![GitHub release (latest by date)](https://img.shields.io/github/v/release/CENTR-IMPACT/centrimpact_app) ![License: MIT](https://img.shields.io/badge/license-MIT-green.svg) [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](code_of_conduct.md)
 
 ## Prerequisites
 

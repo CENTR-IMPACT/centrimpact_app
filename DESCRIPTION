@@ -1,7 +1,7 @@
 Type: shiny
 Package: centrimpactapp
 Title: CENTRIMPACT Toolkit
-Version: 0.1.0
+Version: 0.1.1
 Authors@R: c(
     person(given = "Jeremy", family = "Price", email = "jeremyfprice@example.com", role = c("aut", "cre")))
 Description: This toolkit provides an ensemble of metrics designed by and for community-engaged scholars to evaluate and communicate the impact of their work through quantitative measures that complement qualitative narratives.
