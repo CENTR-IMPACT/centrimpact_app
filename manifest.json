@@ -269,39 +269,6 @@
         "Built": "R 4.4.0; ; 2024-04-05 15:01:01 UTC; unix"
       }
     },
-    "RPostgreSQL": {
-      "Source": "CRAN",
-      "Repository": "https://cloud.r-project.org",
-      "description": {
-        "Package": "RPostgreSQL",
-        "Version": "0.7-8",
-        "Date": "2025-03-28",
-        "Title": "R Interface to the 'PostgreSQL' Database System",
-        "Maintainer": "Tomoaki Nishiyama <tomoaki@sci.u-toyama.ac.jp>",
-        "Description": "Database interface and 'PostgreSQL' driver for 'R'.\n This package provides a Database Interface 'DBI' compliant \n driver for 'R' to access 'PostgreSQL' database systems.  \n In order to build and install this package from source, 'PostgreSQL' \n itself must be present your system to provide 'PostgreSQL' functionality \n via its libraries and header files. These files are provided as\n 'postgresql-devel' package under some Linux distributions.\n On 'macOS' and 'Microsoft Windows' system the attached 'libpq' library source will be used.",
-        "LazyLoad": "true",
-        "Depends": "R (>= 3.4.0), methods, DBI (>= 0.3)",
-        "License": "GPL-3 | file LICENSE",
-        "Copyright": "Authors listed above, PostgreSQL Global Development Group,\nand The Regents of the University of California",
-        "Collate": "S4R.R zzz.R PostgreSQLSupport.R dbObjectId.R PostgreSQL.R",
-        "URL": "https://github.com/tomoakin/RPostgreSQL,\nhttps://cran.r-project.org/package=DBI,\nhttps://www.postgresql.org",
-        "Authors@R": "c(person(given = \"Joe\",\n                       family = \"Conway\",\n                       role = \"aut\"),\n                person(given = \"Dirk\",\n                       family = \"Eddelbuettel\",\n                       role = \"aut\"),\n                person(given = \"Tomoaki\",\n                       family = \"Nishiyama\",\n                       role = c(\"aut\", \"cre\"),\n                       email = \"tomoaki@sci.u-toyama.ac.jp\"),\n                person(given = c(\"Sameer\", \"Kumar\"),\n                       family = \"Prayaga\",\n                       role = \"aut\",\n                       comment = \"during 2008\"),\n                person(given = \"Neil\",\n                       family = \"Tiffin\",\n                       role = \"aut\"))",
-        "NeedsCompilation": "yes",
-        "Packaged": "2025-03-28 06:57:36 UTC; tomoaki",
-        "Author": "Joe Conway [aut],\n  Dirk Eddelbuettel [aut],\n  Tomoaki Nishiyama [aut, cre],\n  Sameer Kumar Prayaga [aut] (during 2008),\n  Neil Tiffin [aut]",
-        "Repository": "RSPM",
-        "Date/Publication": "2025-03-28 08:00:02 UTC",
-        "Encoding": "UTF-8",
-        "Built": "R 4.4.3; aarch64-apple-darwin20; 2025-08-04 13:15:02 UTC; unix",
-        "RemoteType": "standard",
-        "RemoteRef": "RPostgreSQL",
-        "RemotePkgRef": "RPostgreSQL",
-        "RemoteRepos": "https://packagemanager.posit.co/cran/latest",
-        "RemoteReposName": "CRAN",
-        "RemotePkgPlatform": "source",
-        "RemoteSha": "0.7-8"
-      }
-    },
     "RSQLite": {
       "Source": "CRAN",
       "Repository": "https://cloud.r-project.org",
@@ -916,42 +883,6 @@
         "Date/Publication": "2025-07-07 13:40:02 UTC",
         "Built": "R 4.4.1; aarch64-apple-darwin20; 2025-07-07 15:07:00 UTC; unix",
         "Archs": "commonmark.so.dSYM"
-      }
-    },
-    "config": {
-      "Source": "CRAN",
-      "Repository": "https://cloud.r-project.org",
-      "description": {
-        "Package": "config",
-        "Type": "Package",
-        "Title": "Manage Environment Specific Configuration Values",
-        "Version": "0.3.2",
-        "Authors@R": "c(\n  person(\"JJ\", \"Allaire\", role = c(\"aut\"), email = \"jj@rstudio.com\"),\n  person(\"Andrie\", \"de Vries\", role = \"cre\", email = \"apdevries@gmail.com\"),\n  person(\"Posit Software, PBC\", role = c(\"cph\", \"fnd\"))\n  )",
-        "Imports": "yaml (>= 2.1.19)",
-        "Suggests": "testthat, knitr, rmarkdown, covr, spelling, withr",
-        "Description": "Manage configuration values across multiple environments (e.g.\n  development, test, production). Read values using a function that determines\n  the current environment and returns the appropriate value.",
-        "License": "GPL-3",
-        "URL": "https://rstudio.github.io/config/,\nhttps://github.com/rstudio/config",
-        "BugReports": "https://github.com/rstudio/config/issues",
-        "RoxygenNote": "7.2.3",
-        "VignetteBuilder": "knitr",
-        "Encoding": "UTF-8",
-        "Language": "en-US",
-        "Config/testthat/edition": "3",
-        "NeedsCompilation": "no",
-        "Packaged": "2023-08-30 09:28:23 UTC; apdev",
-        "Author": "JJ Allaire [aut],\n  Andrie de Vries [cre],\n  Posit Software, PBC [cph, fnd]",
-        "Maintainer": "Andrie de Vries <apdevries@gmail.com>",
-        "Repository": "RSPM",
-        "Date/Publication": "2023-08-30 16:50:36 UTC",
-        "Built": "R 4.4.0; ; 2024-04-25 05:46:48 UTC; unix",
-        "RemoteType": "standard",
-        "RemoteRef": "config",
-        "RemotePkgRef": "config",
-        "RemoteRepos": "https://packagemanager.posit.co/cran/latest",
-        "RemoteReposName": "CRAN",
-        "RemotePkgPlatform": "aarch64-apple-darwin20",
-        "RemoteSha": "0.3.2"
       }
     },
     "cpp11": {
@@ -2883,43 +2814,6 @@
         "Archs": "polyclip.so.dSYM"
       }
     },
-    "pool": {
-      "Source": "CRAN",
-      "Repository": "https://cloud.r-project.org",
-      "description": {
-        "Type": "Package",
-        "Package": "pool",
-        "Title": "Object Pooling",
-        "Version": "1.0.4",
-        "Authors@R": "c(\n    person(\"Joe\", \"Cheng\", , \"joe@posit.co\", role = \"aut\"),\n    person(\"Barbara\", \"Borges\", role = \"aut\"),\n    person(\"Hadley\", \"Wickham\", , \"hadley@posit.co\", role = c(\"aut\", \"cre\")),\n    person(\"Posit Software, PBC\", role = c(\"cph\", \"fnd\"))\n  )",
-        "Description": "Enables the creation of object pools, which make it less\n    computationally expensive to fetch a new object. Currently the only\n    supported pooled objects are 'DBI' connections.",
-        "License": "MIT + file LICENSE",
-        "URL": "https://github.com/rstudio/pool, https://rstudio.github.io/pool/",
-        "BugReports": "https://github.com/rstudio/pool/issues",
-        "Depends": "methods, R (>= 3.6.0)",
-        "Imports": "DBI (>= 1.2.1), later (>= 1.0.0), R6, rlang (>= 1.0.0)",
-        "Suggests": "covr, dbplyr (>= 2.4.0), dplyr, knitr, rmarkdown, RSQLite,\nshiny, testthat (>= 3.0.0), tibble",
-        "VignetteBuilder": "knitr",
-        "Config/Needs/website": "tidyverse/tidytemplate",
-        "Config/testthat/edition": "3",
-        "Encoding": "UTF-8",
-        "RoxygenNote": "7.3.2",
-        "NeedsCompilation": "no",
-        "Packaged": "2024-10-07 14:58:02 UTC; hadleywickham",
-        "Author": "Joe Cheng [aut],\n  Barbara Borges [aut],\n  Hadley Wickham [aut, cre],\n  Posit Software, PBC [cph, fnd]",
-        "Maintainer": "Hadley Wickham <hadley@posit.co>",
-        "Repository": "RSPM",
-        "Date/Publication": "2024-10-07 15:30:02 UTC",
-        "Built": "R 4.4.0; ; 2024-10-08 04:33:30 UTC; unix",
-        "RemoteType": "standard",
-        "RemoteRef": "pool",
-        "RemotePkgRef": "pool",
-        "RemoteRepos": "https://packagemanager.posit.co/cran/latest",
-        "RemoteReposName": "CRAN",
-        "RemotePkgPlatform": "aarch64-apple-darwin20",
-        "RemoteSha": "1.0.4"
-      }
-    },
     "prettyunits": {
       "Source": "CRAN",
       "Repository": "https://cloud.r-project.org",
@@ -4727,7 +4621,7 @@
       "checksum": "5fe2613f0084cfac9853279a7a336fa2"
     },
     ".Rprofile": {
-      "checksum": "e5a24ee2fa7586b7dceb38dd67f63026"
+      "checksum": "012851afcb7073582b1b22da37050826"
     },
     "CODE_OF_CONDUCT.md": {
       "checksum": "2d2a0d4f4992ac06de7c03997f97a0a3"
@@ -4736,7 +4630,7 @@
       "checksum": "528cab91db59f61a243c23aa3d760111"
     },
     "global.R": {
-      "checksum": "fffc18c7c55a3f54f18a1e7f089b3a4a"
+      "checksum": "6c3a14e8ecb5553fde1e903ccf7c20c0"
     },
     "LICENSE": {
       "checksum": "e87cd93fad885bb89b3beb4628276f22"
@@ -4751,13 +4645,13 @@
       "checksum": "2d0e328ed60fb5471d484c68d2b9ba4a"
     },
     "modules/mod_generate.R": {
-      "checksum": "b562919c65898e6330eebcd2eb3026a2"
+      "checksum": "6665472e01a49f4b35976788c891e8ab"
     },
     "modules/mod_home.R": {
       "checksum": "934cfa5054641bfcd587d8fc176c181a"
     },
     "modules/mod_load_clean.R": {
-      "checksum": "e4719d589b29637fec33ea422dd80a14"
+      "checksum": "8e75ffe57d74bf3b6034f67c6b1fa0ee"
     },
     "modules/mod_setup.R": {
       "checksum": "c0d861f3e0ab00816c45f6adc2873124"
@@ -4769,10 +4663,10 @@
       "checksum": "01728a6b2aaf99107a37added2e3955a"
     },
     "renv.lock": {
-      "checksum": "99aca264c75abf8b90e7e8129fb7c5bd"
+      "checksum": "3b49e998fd9c143c25476416053cb40b"
     },
     "server.R": {
-      "checksum": "898e249600bf0ab62f4d0e95a9e41e0b"
+      "checksum": "0847a3587f1567cb4d1a00d2da6fa436"
     },
     "ui.R": {
       "checksum": "aad362f101504c6e4bf3573028758500"

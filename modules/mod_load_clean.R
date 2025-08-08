@@ -659,10 +659,10 @@ mod_load_clean_server <- function(id, project_data) {
 
     # Render the static network plot
     output$static_network_plot <- renderPlot({
-      req(ns_project$cascade_data)
+      req(project_data$cleaned_data$cascade)
       tryCatch(
         {
-          create_static_network_plot(ns_project$cascade_data)
+          create_static_network_plot(project_data$cleaned_data$cascade)
         },
         error = function(e) {
           logger::log_error("Error rendering static network plot: {conditionMessage(e)}")

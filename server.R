@@ -4,6 +4,86 @@ source("global.R")
 `%||%` <- function(x, y) if (is.null(x)) y else x
 
 server <- function(input, output, session) {
+  # Helper function to create score icons with configurable thresholds
+  create_score_icon <- function(score_field, thresholds = NULL) {
+    # Default thresholds for alignment
+    if (is.null(thresholds)) {
+      thresholds <- list(
+        low = 0.40,
+        med_low = 0.59,
+        med_high = 0.74
+      )
+    }
+
+    tryCatch(
+      {
+        pd <- get0("project_data", ifnotfound = NULL)
+        if (is.null(pd) || !("reactivevalues" %in% class(pd)) ||
+          is.null(pd$analyzed_data) || is.null(pd$analyzed_data[[score_field]])) {
+          return(NULL)
+        }
+
+        score <- as.numeric(pd$analyzed_data[[score_field]])
+        icon_name <- if (score < thresholds$low) {
+          "caret-circle-double-down"
+        } else if (score >= thresholds$low && score <= thresholds$med_low) {
+          if (thresholds$low == 0.40) "caret-circle-up-down" else "caret-circle-down"
+        } else if (score > thresholds$med_low && score <= thresholds$med_high) {
+          if (thresholds$low == 0.40) "caret-circle-up" else "caret-circle-up-down"
+        } else if (score > thresholds$med_high && thresholds$low != 0.40) {
+          "caret-circle-up"
+        } else {
+          "caret-circle-double-up"
+        }
+
+        # Add margin to the right of the icon
+        div(
+          style = "margin-right: 5px;",
+          ph(icon_name, weight = "bold")
+        )
+      },
+      error = function(e) {
+        print(paste("ERROR[", score_field, "_icon]:", e, sep = ""))
+        NULL
+      }
+    )
+  }
+
+  # Helper function to create score displays
+  create_score_display <- function(score_field) {
+    tryCatch(
+      {
+        pd <- get0("project_data", ifnotfound = NULL)
+        if (is.null(pd) || !("reactivevalues" %in% class(pd)) ||
+          is.null(pd$analyzed_data) || is.null(pd$analyzed_data[[score_field]])) {
+          has_score <- FALSE
+          score_value <- "-.--"
+        } else {
+          has_score <- !is.null(pd$analyzed_data[[score_field]])
+          score_value <- if (has_score) format(round(as.numeric(pd$analyzed_data[[score_field]]), 2), nsmall = 2) else "-.--"
+        }
+
+        div(
+          class = if (has_score) "score-value has-score" else "score-value",
+          style = "font-family: var(--bs-font-monospace); font-weight: 700;",
+          score_value
+        )
+      },
+      error = function(e) {
+        print(paste("ERROR[", score_field, "_display]:", e, sep = ""))
+        div(
+          class = "no-score",
+          style = "font-family: var(--bs-font-monospace); color: #D3D3D366;",
+          div(
+            class = "score-value",
+            style = "font-family: var(--bs-font-monospace); font-weight: 700;",
+            "-.--"
+          )
+        )
+      }
+    )
+  }
+
   # Initialize startup check reactive value
   startup_check <- reactiveVal(TRUE)
 
@@ -21,44 +101,8 @@ server <- function(input, output, session) {
     startup_check(FALSE)
   })
 
-  # call database module
-  output$my_db_output <- renderUI({
-    my_db_output()
-  })
-
-  # Initialize database connection - check if it exists first
-  tryCatch(
-    {
-      con <- pool::dbPool(
-        drv = RPostgreSQL::PostgreSQL(),
-        host = config::get("postgresql")$host,
-        dbname = config::get("postgresql")$dbname,
-        user = config::get("postgresql")$user,
-        password = config::get("postgresql")$password,
-        port = config::get("postgresql")$port
-      )
-
-      # Register the pool for automatic disconnection when the session ends
-      onStop(function() {
-        pool::poolClose(con)
-      })
-    },
-    error = function(e) {
-      logger::log_error("Database connection failed: ", e$message)
-      con <- NULL
-    }
-  )
-
-  # Initialize a reactive value for temporary storage
-  temp_storage <- reactiveValues()
-
   # Call the home module
   mod_home_server("home_1")
-
-  # Function to insert authors into the database
-  insert_author <- function(author_name, author_email, author_institution, author_role, author_orcid) {
-    # Insert logic here
-  }
 
   # Direct module calls without wrappers
   setup_result <- mod_setup_server(
@@ -66,91 +110,15 @@ server <- function(input, output, session) {
     project_data = project_data
   )
 
-  # also disconnect if session stops
-  onStop(function() {
-    if (exists("con") && !is.null(con)) {
-      pool::poolClose(con)
-    }
-  })
 
-  # Render icons with conditional coloring (now using project_data$analyzed_data) with tryCatch
-  output$alignment_icon <- renderUI({
-    tryCatch(
-      {
-        pd <- get0("project_data", ifnotfound = NULL)
-        if (is.null(pd) || !("reactivevalues" %in% class(pd)) ||
-          is.null(pd$analyzed_data) || is.null(pd$analyzed_data$alignment_score)) {
-          has_score <- FALSE
-          score_value <- "-.--"
-        } else {
-          has_score <- !is.null(pd$analyzed_data$alignment_score)
-          score_value <- if (has_score) format(round(as.numeric(pd$analyzed_data$alignment_score), 2), nsmall = 2) else "-.--"
-        }
-        icon_style <- if (has_score) "font-size: 1em;" else "font-size: 1em; color: #D3D3D366;"
-        ph("target", weight = "regular", style = icon_style)
-      },
-      error = function(e) {
-        print(paste("ERROR[alignment_icon]:", e))
-        icon_style <- "font-size: 1em; color: #D3D3D3;"
-        ph("target", weight = "regular", style = icon_style)
-      }
-    )
-  })
 
-  # Render dynamics icon with conditional color (now using project_data$analyzed_data) with tryCatch
-  output$dynamics_icon <- renderUI({
-    tryCatch(
-      {
-        pd <- get0("project_data", ifnotfound = NULL)
-        if (is.null(pd) || !("reactivevalues" %in% class(pd)) ||
-          is.null(pd$analyzed_data) || is.null(pd$analyzed_data$dynamics_score)) {
-          has_score <- FALSE
-          score_value <- "-.--"
-        } else {
-          has_score <- !is.null(pd$analyzed_data$dynamics_score)
-          score_value <- if (has_score) format(round(as.numeric(pd$analyzed_data$dynamics_score), 2), nsmall = 2) else "-.--"
-        }
-        icon_style <- if (has_score) "font-size: 1em;" else "font-size: 1em; color: #D3D3D366;"
-        ph("chart-line", weight = "regular", style = icon_style)
-      },
-      error = function(e) {
-        print(paste("ERROR[dynamics_icon]:", e))
-        icon_style <- "font-size: 1em; color: #D3D3D3;"
-        ph("chart-line", weight = "regular", style = icon_style)
-      }
-    )
-  })
 
-  # Render cascade icon with conditional color (now using project_data$analyzed_data) with tryCatch and debug
-  output$cascade_icon <- renderUI({
-    tryCatch(
-      {
-        pd <- get0("project_data", ifnotfound = NULL)
-        print(paste("DEBUG[cascade_icon]: typeof(pd) =", typeof(pd)))
-        print(paste("DEBUG[cascade_icon]: class(pd) =", paste(class(pd), collapse = ", ")))
-        if (is.null(pd) || !("reactivevalues" %in% class(pd)) ||
-          is.null(pd$analyzed_data) || is.null(pd$analyzed_data$cascade_score)) {
-          has_score <- FALSE
-        } else {
-          has_score <- !is.null(pd$analyzed_data$cascade_score)
-        }
-        icon_style <- if (has_score) "font-size: 1em;" else "font-size: 1em; color: #D3D3D366;"
-        ph("waveform", weight = "regular", style = icon_style)
-      },
-      error = function(e) {
-        print(paste("ERROR[cascade_icon]:", e))
-        icon_style <- "font-size: 1em; color: #D3D3D3;"
-        ph("waveform", weight = "regular", style = icon_style)
-      }
-    )
-  })
 
   # Initialize reactive values for app state
   data_entry_mode <- reactiveVal(FALSE) # FALSE = manual entry, TRUE = upload
   snapshot_mode <- reactiveVal(FALSE) # Add this if not already present
 
   # Track tabset changes for change detection
-  tab_visits <- reactiveValues()
   tab_changes <- reactiveValues()
 
   # Log all reactive values for debugging
@@ -165,90 +133,7 @@ server <- function(input, output, session) {
     session$sendCustomMessage("setDataModeSelector", list(mode = initial_mode))
   })
 
-  # Project data and author information
-  ns_project <- reactiveValues(
-    project_title = NULL,
-    project_description = NULL,
-    project_report_date = NULL,
-    project_report_outputs = list(
-      pdf = NULL,
-      html = NULL,
-      word = NULL
-    ),
-    # Add variables from mod_load_clean.R
-    main_data_raw = NULL,
-    main_cleaned = NULL,
-    alignment_data_raw = NULL,
-    alignment_data = NULL,
-    dynamics_data = NULL,
-    cascade_data = NULL,
-    params = NULL,
-    edges = NULL,
-    nodes = NULL,
-    yaml_content = NULL,
-    file_name = NULL,
-    rv_status = NULL
-  )
 
-  ns_authors <- reactiveValues(
-    author_list = data.frame(
-      author_name = character(),
-      author_email = character(),
-      author_orcid = character(),
-      author_institution = character(),
-      author_role = character(),
-      stringsAsFactors = FALSE
-    )
-  )
-
-  # Create a reactive expression for the project title and date
-  project_header <- reactive({
-    # Get the namespace for the setup module
-    setup_ns <- NS("setup")
-
-    # Get the current input values with proper reactivity
-    title <- input[[paste0("setup-project_title")]]
-    report_date <- input[[paste0("setup-report_date")]]
-
-    # Debug logging
-    logger::log_info("Project header update - Title:", title, " Date:", report_date)
-
-    # If title is empty, use default
-    if (is.null(title) || title == "") {
-      title <- "New Project"
-    }
-
-    # Format the date if available
-    date_text <- NULL
-    if (!is.null(report_date) && report_date != "" && !all(is.na(report_date))) {
-      date_text <- tryCatch(
-        {
-          formatted_date <- format(as.Date(report_date), "%Y-%m-%d")
-          div(
-            style = "font-family: var(--bs-font-monospace); font-size: 0.7em; color: #D3D3D3; margin-top: 2px; display: block; text-transform: uppercase;",
-            phosphoricons::ph("calendar", weight = "regular"),
-            " ",
-            formatted_date
-          )
-        },
-        error = function(e) {
-          logger::log_warn("Error formatting date:", e$message)
-          NULL
-        }
-      )
-    }
-
-    # Return title and date
-    tagList(
-      div(
-        style = "text-transform: uppercase; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%;",
-        phosphoricons::ph("tree-structure", weight = "light"),
-        " ",
-        toupper(title)
-      ),
-      date_text
-    )
-  })
 
   # Create a reactive expression for project header that depends on project_data
   project_header_react <- reactive({
@@ -319,70 +204,12 @@ server <- function(input, output, session) {
 
   # Render alignment score icon based on score range
   output$alignment_score_icon <- renderUI({
-    tryCatch(
-      {
-        pd <- get0("project_data", ifnotfound = NULL)
-        if (is.null(pd) || !("reactivevalues" %in% class(pd)) ||
-          is.null(pd$analyzed_data) || is.null(pd$analyzed_data$alignment_score)) {
-          return(NULL)
-        }
-
-        score <- as.numeric(pd$analyzed_data$alignment_score)
-        icon_name <- if (score < 0.40) {
-          "caret-circle-double-down"
-        } else if (score >= 0.40 && score <= 0.59) {
-          "caret-circle-up-down"
-        } else if (score >= 0.60 && score <= 0.74) {
-          "caret-circle-up"
-        } else {
-          "caret-circle-double-up"
-        }
-
-        # Add margin to the right of the icon
-        div(
-          style = "margin-right: 5px;",
-          ph(icon_name, weight = "bold")
-        )
-      },
-      error = function(e) {
-        print(paste("ERROR[alignment_score_icon]:", e))
-        NULL
-      }
-    )
+    create_score_icon("alignment_score")
   })
 
   # Render alignment score display with default value and dimmed style logic
   output$alignment_score_display <- renderUI({
-    tryCatch(
-      {
-        pd <- get0("project_data", ifnotfound = NULL)
-        if (is.null(pd) || !("reactivevalues" %in% class(pd)) ||
-          is.null(pd$analyzed_data) || is.null(pd$analyzed_data$alignment_score)) {
-          has_score <- FALSE
-          score_value <- "-.--"
-        } else {
-          has_score <- !is.null(pd$analyzed_data$alignment_score)
-          score_value <- if (has_score) format(round(as.numeric(pd$analyzed_data$alignment_score), 2), nsmall = 2) else "-.--"
-        }
-        div(
-          class = if (has_score) "score-value has-score" else "score-value",
-          style = "font-family: var(--bs-font-monospace); font-weight: 700;",
-          score_value
-        )
-      },
-      error = function(e) {
-        print(paste("ERROR[alignment_score_display]:", e))
-        div(
-          class = "no-score",
-          style = "font-family: var(--bs-font-monospace); color: #D3D3D366;",
-          div(
-            class = "score-value",
-            style = "font-family: var(--bs-font-monospace); font-weight: 700;",
-            "-.--"
-          )
-        )
-      }
-    )
+    create_score_display("alignment_score")
   })
 
   # Initialize project data structure
@@ -1144,147 +971,33 @@ server <- function(input, output, session) {
 
   # Render dynamics score icon based on score range
   output$dynamics_score_icon <- renderUI({
-    tryCatch(
-      {
-        pd <- get0("project_data", ifnotfound = NULL)
-        if (is.null(pd) || !("reactivevalues" %in% class(pd)) ||
-          is.null(pd$analyzed_data) || is.null(pd$analyzed_data$dynamics_score)) {
-          return(NULL)
-        }
-
-        score <- as.numeric(pd$analyzed_data$dynamics_score)
-        icon_name <- if (score < 0.50) {
-          "caret-circle-double-down"
-        } else if (score >= 0.50 && score <= 0.59) {
-          "caret-circle-down"
-        } else if (score >= 0.60 && score <= 0.69) {
-          "caret-circle-up-down"
-        } else if (score >= 0.70 && score <= 0.79) {
-          "caret-circle-up"
-        } else {
-          "caret-circle-double-up"
-        }
-
-        # Add margin to the right of the icon
-        div(
-          style = "margin-right: 5px;",
-          ph(icon_name, weight = "bold")
-        )
-      },
-      error = function(e) {
-        print(paste("ERROR[dynamics_score_icon]:", e))
-        NULL
-      }
+    # Dynamics uses different thresholds
+    dynamics_thresholds <- list(
+      low = 0.50,
+      med_low = 0.59,
+      med_high = 0.79
     )
+    create_score_icon("dynamics_score", dynamics_thresholds)
   })
 
   # Render dynamics score display (now using project_data$analyzed_data) with tryCatch and debug
   output$dynamics_score_display <- renderUI({
-    tryCatch(
-      {
-        pd <- get0("project_data", ifnotfound = NULL)
-        print(paste("DEBUG[dynamics_score_display]: typeof(pd) =", typeof(pd)))
-        print(paste("DEBUG[dynamics_score_display]: class(pd) =", paste(class(pd), collapse = ", ")))
-        if (is.null(pd) || !("reactivevalues" %in% class(pd)) ||
-          is.null(pd$analyzed_data) || is.null(pd$analyzed_data$dynamics_score)) {
-          has_score <- FALSE
-          score_value <- "-.--"
-        } else {
-          has_score <- !is.null(pd$analyzed_data$dynamics_score)
-          score_value <- if (has_score) format(round(as.numeric(pd$analyzed_data$dynamics_score), 2), nsmall = 2) else "-.--"
-        }
-
-        div(
-          class = if (has_score) "score-value has-score" else "score-value",
-          style = "font-family: var(--bs-font-monospace); font-weight: 700;",
-          score_value
-        )
-      },
-      error = function(e) {
-        print(paste("ERROR[dynamics_score_display]:", e))
-        div(
-          class = "no-score",
-          style = "font-family: var(--bs-font-monospace); color: #D3D3D366;",
-          div(
-            class = "score-value",
-            style = "font-family: var(--bs-font-monospace);",
-            "-.--"
-          )
-        )
-      }
-    )
+    create_score_display("dynamics_score")
   })
 
   # Render cascade score icon based on score range
   output$cascade_score_icon <- renderUI({
-    tryCatch(
-      {
-        pd <- get0("project_data", ifnotfound = NULL)
-        if (is.null(pd) || !("reactivevalues" %in% class(pd)) ||
-          is.null(pd$analyzed_data) || is.null(pd$analyzed_data$cascade_score)) {
-          return(NULL)
-        }
-
-        score <- as.numeric(pd$analyzed_data$cascade_score)
-        icon_name <- if (score < 0.50) {
-          "caret-circle-double-down"
-        } else if (score >= 0.50 && score <= 0.59) {
-          "caret-circle-down"
-        } else if (score >= 0.60 && score <= 0.69) {
-          "caret-circle-up-down"
-        } else if (score >= 0.70 && score <= 0.79) {
-          "caret-circle-up"
-        } else {
-          "caret-circle-double-up"
-        }
-
-        # Add margin to the right of the icon
-        div(
-          style = "margin-right: 5px;",
-          ph(icon_name, weight = "bold")
-        )
-      },
-      error = function(e) {
-        print(paste("ERROR[cascade_score_icon]:", e))
-        NULL
-      }
+    # Cascade uses same thresholds as dynamics
+    cascade_thresholds <- list(
+      low = 0.50,
+      med_low = 0.59,
+      med_high = 0.79
     )
+    create_score_icon("cascade_score", cascade_thresholds)
   })
 
   # Render cascade score display (now using project_data$analyzed_data) with tryCatch and debug
   output$cascade_score_display <- renderUI({
-    tryCatch(
-      {
-        pd <- get0("project_data", ifnotfound = NULL)
-        print(paste("DEBUG[cascade_score_display]: typeof(pd) =", typeof(pd)))
-        print(paste("DEBUG[cascade_score_display]: class(pd) =", paste(class(pd), collapse = ", ")))
-        if (is.null(pd) || !("reactivevalues" %in% class(pd)) ||
-          is.null(pd$analyzed_data) || is.null(pd$analyzed_data$cascade_score)) {
-          has_score <- FALSE
-          score_value <- "-.--"
-        } else {
-          has_score <- !is.null(pd$analyzed_data$cascade_score)
-          score_value <- if (has_score) format(round(as.numeric(pd$analyzed_data$cascade_score), 2), nsmall = 2) else "-.--"
-        }
-
-        div(
-          class = if (has_score) "score-value has-score" else "score-value",
-          style = "font-family: var(--bs-font-monospace); font-weight: 700;",
-          score_value
-        )
-      },
-      error = function(e) {
-        print(paste("ERROR[cascade_score_display]:", e))
-        div(
-          class = "no-score",
-          style = "font-family: var(--bs-font-monospace); color: #D3D3D366;",
-          div(
-            class = "score-value",
-            style = "font-family: var(--bs-font-monospace); font-weight: 700;",
-            "-.--"
-          )
-        )
-      }
-    )
+    create_score_display("cascade_score")
   })
 }

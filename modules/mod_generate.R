@@ -10,9 +10,7 @@
 
 # Utilities are loaded in global.R
 
-library(later)
-library(shiny)
-library(shinyjs)
+
 
 # UI function with accordion panels
 # Helper function to generate section UI with lightbulb icons

@@ -8,11 +8,20 @@ if (!requireNamespace("DT", quietly = TRUE)) {
 if (!requireNamespace("shinyvalidate", quietly = TRUE)) {
   install.packages("shinyvalidate")
 }
+if (!requireNamespace("shinyjs", quietly = TRUE)) {
+  install.packages("shinyjs")
+}
+if (!requireNamespace("later", quietly = TRUE)) {
+  install.packages("later")
+}
 library(logger)
 library(phosphoricons)
 library(DT)
 library(htmltools)
 library(shinyvalidate)
+library(shiny)
+library(shinyjs)
+library(later)
 
 # Set up logger to write to console with timestamps and log level
 log_threshold(INFO)

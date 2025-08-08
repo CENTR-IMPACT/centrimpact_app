@@ -330,30 +330,6 @@
       "NeedsCompilation": "no",
       "Repository": "CRAN"
     },
-    "RPostgreSQL": {
-      "Package": "RPostgreSQL",
-      "Version": "0.7-8",
-      "Source": "Repository",
-      "Date": "2025-03-28",
-      "Title": "R Interface to the 'PostgreSQL' Database System",
-      "Maintainer": "Tomoaki Nishiyama <tomoaki@sci.u-toyama.ac.jp>",
-      "Description": "Database interface and 'PostgreSQL' driver for 'R'. This package provides a Database Interface 'DBI' compliant  driver for 'R' to access 'PostgreSQL' database systems.   In order to build and install this package from source, 'PostgreSQL'  itself must be present your system to provide 'PostgreSQL' functionality  via its libraries and header files. These files are provided as 'postgresql-devel' package under some Linux distributions. On 'macOS' and 'Microsoft Windows' system the attached 'libpq' library source will be used.",
-      "LazyLoad": "true",
-      "Depends": [
-        "R (>= 3.4.0)",
-        "methods",
-        "DBI (>= 0.3)"
-      ],
-      "License": "GPL-3 | file LICENSE",
-      "Copyright": "Authors listed above, PostgreSQL Global Development Group, and The Regents of the University of California",
-      "Collate": "S4R.R zzz.R PostgreSQLSupport.R dbObjectId.R PostgreSQL.R",
-      "URL": "https://github.com/tomoakin/RPostgreSQL, https://cran.r-project.org/package=DBI, https://www.postgresql.org",
-      "Authors@R": "c(person(given = \"Joe\", family = \"Conway\", role = \"aut\"), person(given = \"Dirk\", family = \"Eddelbuettel\", role = \"aut\"), person(given = \"Tomoaki\", family = \"Nishiyama\", role = c(\"aut\", \"cre\"), email = \"tomoaki@sci.u-toyama.ac.jp\"), person(given = c(\"Sameer\", \"Kumar\"), family = \"Prayaga\", role = \"aut\", comment = \"during 2008\"), person(given = \"Neil\", family = \"Tiffin\", role = \"aut\"))",
-      "NeedsCompilation": "yes",
-      "Author": "Joe Conway [aut], Dirk Eddelbuettel [aut], Tomoaki Nishiyama [aut, cre], Sameer Kumar Prayaga [aut] (during 2008), Neil Tiffin [aut]",
-      "Repository": "https://packagemanager.posit.co/cran/latest",
-      "Encoding": "UTF-8"
-    },
     "RSQLite": {
       "Package": "RSQLite",
       "Version": "2.4.2",
@@ -1048,38 +1024,6 @@
       "Author": "Jeroen Ooms [aut, cre] (ORCID: <https://orcid.org/0000-0002-4035-0289>), John MacFarlane [cph] (Author of cmark)",
       "Maintainer": "Jeroen Ooms <jeroenooms@gmail.com>",
       "Repository": "CRAN"
-    },
-    "config": {
-      "Package": "config",
-      "Version": "0.3.2",
-      "Source": "Repository",
-      "Type": "Package",
-      "Title": "Manage Environment Specific Configuration Values",
-      "Authors@R": "c( person(\"JJ\", \"Allaire\", role = c(\"aut\"), email = \"jj@rstudio.com\"), person(\"Andrie\", \"de Vries\", role = \"cre\", email = \"apdevries@gmail.com\"), person(\"Posit Software, PBC\", role = c(\"cph\", \"fnd\")) )",
-      "Imports": [
-        "yaml (>= 2.1.19)"
-      ],
-      "Suggests": [
-        "testthat",
-        "knitr",
-        "rmarkdown",
-        "covr",
-        "spelling",
-        "withr"
-      ],
-      "Description": "Manage configuration values across multiple environments (e.g. development, test, production). Read values using a function that determines the current environment and returns the appropriate value.",
-      "License": "GPL-3",
-      "URL": "https://rstudio.github.io/config/, https://github.com/rstudio/config",
-      "BugReports": "https://github.com/rstudio/config/issues",
-      "RoxygenNote": "7.2.3",
-      "VignetteBuilder": "knitr",
-      "Encoding": "UTF-8",
-      "Language": "en-US",
-      "Config/testthat/edition": "3",
-      "NeedsCompilation": "no",
-      "Author": "JJ Allaire [aut], Andrie de Vries [cre], Posit Software, PBC [cph, fnd]",
-      "Maintainer": "Andrie de Vries <apdevries@gmail.com>",
-      "Repository": "https://packagemanager.posit.co/cran/latest"
     },
     "cpp11": {
       "Package": "cpp11",
@@ -3546,48 +3490,6 @@
       "NeedsCompilation": "yes",
       "Author": "Angus Johnson [aut] (C++ original, http://www.angusj.com/delphi/clipper.php), Adrian Baddeley [aut, trl, cre], Kurt Hornik [ctb], Brian D. Ripley [ctb], Elliott Sales de Andrade [ctb], Paul Murrell [ctb], Ege Rubak [ctb], Mark Padgham [ctb]",
       "Repository": "CRAN"
-    },
-    "pool": {
-      "Package": "pool",
-      "Version": "1.0.4",
-      "Source": "Repository",
-      "Type": "Package",
-      "Title": "Object Pooling",
-      "Authors@R": "c( person(\"Joe\", \"Cheng\", , \"joe@posit.co\", role = \"aut\"), person(\"Barbara\", \"Borges\", role = \"aut\"), person(\"Hadley\", \"Wickham\", , \"hadley@posit.co\", role = c(\"aut\", \"cre\")), person(\"Posit Software, PBC\", role = c(\"cph\", \"fnd\")) )",
-      "Description": "Enables the creation of object pools, which make it less computationally expensive to fetch a new object. Currently the only supported pooled objects are 'DBI' connections.",
-      "License": "MIT + file LICENSE",
-      "URL": "https://github.com/rstudio/pool, https://rstudio.github.io/pool/",
-      "BugReports": "https://github.com/rstudio/pool/issues",
-      "Depends": [
-        "methods",
-        "R (>= 3.6.0)"
-      ],
-      "Imports": [
-        "DBI (>= 1.2.1)",
-        "later (>= 1.0.0)",
-        "R6",
-        "rlang (>= 1.0.0)"
-      ],
-      "Suggests": [
-        "covr",
-        "dbplyr (>= 2.4.0)",
-        "dplyr",
-        "knitr",
-        "rmarkdown",
-        "RSQLite",
-        "shiny",
-        "testthat (>= 3.0.0)",
-        "tibble"
-      ],
-      "VignetteBuilder": "knitr",
-      "Config/Needs/website": "tidyverse/tidytemplate",
-      "Config/testthat/edition": "3",
-      "Encoding": "UTF-8",
-      "RoxygenNote": "7.3.2",
-      "NeedsCompilation": "no",
-      "Author": "Joe Cheng [aut], Barbara Borges [aut], Hadley Wickham [aut, cre], Posit Software, PBC [cph, fnd]",
-      "Maintainer": "Hadley Wickham <hadley@posit.co>",
-      "Repository": "https://packagemanager.posit.co/cran/latest"
     },
     "prettyunits": {
       "Package": "prettyunits",
