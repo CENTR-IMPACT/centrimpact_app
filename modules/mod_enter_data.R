@@ -14,7 +14,55 @@
 mod_enter_data_ui <- function(id) {
   ns <- NS(id)
   tagList(
-    bslib::card(
+        bslib::accordion(
+          id = ns("data_entry_accordion"),
+          multiple = FALSE,
+          
+          # Main visualization panel
+          bslib::accordion_panel(
+            value = "intro_data",
+            title = tagList(
+              phosphoricons::ph("compass-tool"),
+              HTML("&nbsp;"),
+              "Which Data"
+            ),
+            # Do UI here, ask which data sets they want to enter: Indicators, Dynamics, Cascade
+            shinyWidgets::radioGroupButtons(
+              inputId = ns("analysis_type"),
+              label = "ANALYSIS TYPE",
+              choices = list(
+                "All Data" = "full",
+                "Indicators Data" = "indicators",
+                "Dynamics Data" = "dynamics",
+                "Cascade Data" = "cascade"
+              ),
+              selected = "full",
+              direction = "horizontal",
+              justified = TRUE
+            )
+          ),
+          
+          # One panel for each option
+          bslib::accordion_panel(
+            value = "indicators",
+            title = tagList(ph("flag-checkered", weight = "fill"), HTML("&nbsp;"), "Results"),
+            div(
+             # Indicator Name: [Textbox for Numbers] [ ] Not Applicable (checkbox) (See "Main" Qualtrics Survey)
+            )
+            # Save Button -> See mod_setup.R status_line_ui function for example See mod_load_clean for project_data structure for storing responses
+          ),
+          bslib::accordion_panel(
+            value = "dynamics",
+            title = tagList(ph("arrows-clockwise", weight = "fill"), HTML("&nbsp;"), "Dynamics"),
+            div(
+              # Choose Domains
+              # Go through each select domain and do the modified rank ordering
+            )
+            # Save Button -> See mod_setup.R status_line_ui function for example
+          )
+        ),
+ 
+        bslib::card(
       bslib::card_header(
         style = "background-color: #F2ECD7; border-radius: 0px 0px 10px 10px !important;
       box-shadow: inset 0 4px 10px #8e838066 !important;",
